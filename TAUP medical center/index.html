@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>TAUP Medical Center - AI Health Consultation</title>
+  <meta content="TAUP Medical Center - Modern healthcare with AI consultation in Taraz, Kazakhstan" name="description">
+  <meta content="hospital, clinic, doctor, AI health, consultation, Taraz, Kazakhstan, medical center" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/llogo.jpg" rel="icon">
+  <link href="assets/img/llogo.jpg" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  
+  <!-- Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/doctor-ai.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
+      <div class="align-items-center d-none d-md-flex">
+        <i class="bi bi-clock"></i> Monday - Saturday, 8AM to 10PM
+      </div>
+      <div class="d-flex align-items-center">
+        <i class="bi bi-phone"></i> Call us now +7 778 107 42 72
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <a href="index.html" class="logo me-auto"><img src="assets/img/llogo.jpg" alt="TAUP Medical Center"></a>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#ai-consultant">AI Consultant</a></li>
+          <li><a class="nav-link scrollto" href="#departments">Departments</a></li>
+          <li><a class="nav-link scrollto" href="#doctors">Doctors</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a href="news.html">News</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+
+      <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
+
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div id="heroCarousel" data-bs-interval="2000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+      <div class="carousel-inner" role="listbox">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active" style="background-image: url(assets/img/d.jpg)">
+          <div class="container">
+            <h2>Welcome to <span>TAUP Medical Center</span></h2>
+          </div>
+        </div>
+
+        <!-- Slide 2 (ТҮЗЕТІЛГЕН) -->
+        <div class="carousel-item" style="background-image: url(assets/img/c.jpg)">
+          <div class="container">
+            <h2>AI-Powered Health Consultation</h2>
+            <p>Our advanced AI assistant provides instant medical guidance and connects you directly with specialists.</p>
+            <a href="#ai-consultant" class="btn-get-started scrollto">Start Free Consultation</a>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item" style="background-image: url(assets/img/e.jpg)">
+          <div class="container">
+            <h2>24/7 Emergency Services</h2>
+            <p>Immediate medical attention with direct WhatsApp connection to our emergency team.</p>
+            <a href="#contact" class="btn-get-started scrollto">Contact Emergency</a>
+          </div>
+        </div>
+
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div>
+  </section>
+
+  <main id="main">
+
+    <!-- AI Консультант Бөлімі (ЖАҢА) -->
+    <section id="ai-consultant" class="ai-consultant-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>AI Health Assistant</h2>
+          <p>Get instant medical guidance from our AI-powered health assistant. Describe your symptoms and get connected directly to the right specialist.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="ai-chat-widget">
+              <div class="card shadow">
+                <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                  <h4 class="mb-0"><i class="fas fa-robot me-2"></i>TAUP AI Health Assistant</h4>
+                  <span class="badge bg-success">Online</span>
+                </div>
+                <div class="card-body">
+                  <div class="ai-chat-box">
+                    <div class="chat-messages" id="mainChatMessages" style="height: 300px;">
+                      <div class="message ai-message mb-3">
+                        <div class="d-flex">
+                          <div class="flex-shrink-0">
+                            <div class="ai-avatar-small bg-primary">
+                              <i class="fas fa-robot text-white"></i>
+                            </div>
+                          </div>
+                          <div class="flex-grow-1 ms-3">
+                            <div class="message-content p-3 rounded bg-light">
+                              <strong>TAUP AI Assistant:</strong> Hello! I'm your AI health assistant. I can help you with:
+                              <ul class="mt-2 mb-0">
+                                <li>Symptom analysis and preliminary advice</li>
+                                <li>Direct connection to specialists via WhatsApp</li>
+                                <li>Emergency guidance and instructions</li>
+                                <li>Appointment scheduling assistance</li>
+                              </ul>
+                              <p class="mt-2 mb-0">What symptoms are you experiencing today?</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="chat-input mt-3">
+                      <div class="input-group">
+                        <input type="text" class="form-control" id="mainUserInput" 
+                               placeholder="Describe your symptoms (e.g., headache, fever, chest pain)...">
+                        <button class="btn btn-primary" type="button" id="mainSendBtn">
+                          <i class="fas fa-paper-plane"></i> Send
+                        </button>
+                      </div>
+                      
+                      <div class="symptom-tags mt-3">
+                        <small class="text-muted d-block mb-2">Quick Symptoms:</small>
+                        <div class="d-flex flex-wrap gap-2">
+                          <button class="btn btn-sm btn-outline-primary symptom-btn" data-symptom="Headache and fever">
+                            <i class="fas fa-head-side-virus"></i> Headache & Fever
+                          </button>
+                          <button class="btn btn-sm btn-outline-primary symptom-btn" data-symptom="Chest pain and shortness of breath">
+                            <i class="fas fa-heartbeat"></i> Chest Pain
+                          </button>
+                          <button class="btn btn-sm btn-outline-primary symptom-btn" data-symptom="Stomach pain and nausea">
+                            <i class="fas fa-stomach"></i> Stomach Pain
+                          </button>
+                          <button class="btn btn-sm btn-outline-primary symptom-btn" data-symptom="Cough and sore throat">
+                            <i class="fas fa-lungs-virus"></i> Cough & Throat
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="ai-benefits-card p-4 bg-white rounded shadow h-100">
+              <h4 class="text-primary mb-4">
+                <i class="fas fa-bolt text-warning me-2"></i>Why Choose AI Assistant?
+              </h4>
+              
+              <div class="benefit-item mb-3">
+                <div class="d-flex">
+                  <div class="flex-shrink-0">
+                    <div class="benefit-icon">
+                      <i class="fas fa-clock text-success"></i>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1 ms-3">
+                    <h6 class="mb-1">24/7 Instant Response</h6>
+                    <p class="text-muted small mb-0">Get medical guidance anytime, no waiting</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="benefit-item mb-3">
+                <div class="d-flex">
+                  <div class="flex-shrink-0">
+                    <div class="benefit-icon">
+                      <i class="fab fa-whatsapp text-success"></i>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1 ms-3">
+                    <h6 class="mb-1">Direct WhatsApp Connection</h6>
+                    <p class="text-muted small mb-0">One-click connection to specialists</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="benefit-item mb-3">
+                <div class="d-flex">
+                  <div class="flex-shrink-0">
+                    <div class="benefit-icon">
+                      <i class="fas fa-user-md text-info"></i>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1 ms-3">
+                    <h6 class="mb-1">Specialist Matching</h6>
+                    <p class="text-muted small mb-0">AI matches you with the right doctor</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="benefit-item mb-3">
+                <div class="d-flex">
+                  <div class="flex-shrink-0">
+                    <div class="benefit-icon">
+                      <i class="fas fa-shield-alt text-warning"></i>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1 ms-3">
+                    <h6 class="mb-1">Privacy & Security</h6>
+                    <p class="text-muted small mb-0">Your health data is protected</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mt-4 pt-3 border-top">
+                <a href="#doctors" class="btn btn-outline-primary w-100 mb-2 scrollto">
+                  <i class="fas fa-user-md me-2"></i>View All Doctors
+                </a>
+                <button class="btn btn-danger w-100 emergency-btn" onclick="showEmergencyInstructions()">
+                  <i class="fas fa-ambulance me-2"></i>Emergency Help
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- WhatsApp Doctors Connection -->
+        <div class="row mt-5" id="whatsapp-doctors">
+          <div class="col-12">
+            <div class="section-title">
+              <h3>Connect Directly via WhatsApp</h3>
+              <p>Our specialists are available for instant consultation</p>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="doctor-whatsapp-card text-center p-4 rounded shadow-sm">
+              <img src="assets/img/doctors/doctors-3.jpg" alt="Cardiologist" class="img-fluid rounded-circle mb-3" style="width: 100px; height: 100px; object-fit: cover;">
+              <h5>Dr. Arman Dauletiyarov</h5>
+              <p class="specialty">Cardiology</p>
+              <a href="https://chat.whatsapp.com/D0tuYmaW5myGne7ACttRLJ?mode=gi_t" 
+                 class="btn btn-success btn-sm w-100" target="_blank">
+                <i class="fab fa-whatsapp me-1"></i> Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="doctor-whatsapp-card text-center p-4 rounded shadow-sm">
+              <img src="assets/img/doctors/doctors-1.jpg" alt="Chief Medical Officer" class="img-fluid rounded-circle mb-3" style="width: 100px; height: 100px; object-fit: cover;">
+              <h5>Dr. Walter White</h5>
+              <p class="specialty">Chief Medical Officer</p>
+              <a href="https://chat.whatsapp.com/E8QQyxtskLoHauCtsGMR8S?mode=gi_t" 
+                 class="btn btn-success btn-sm w-100" target="_blank">
+                <i class="fab fa-whatsapp me-1"></i> Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="doctor-whatsapp-card text-center p-4 rounded shadow-sm">
+              <img src="assets/img/doctors/doctors-2.jpg" alt="Anesthesiologist" class="img-fluid rounded-circle mb-3" style="width: 100px; height: 100px; object-fit: cover;">
+              <h5>Dr. Sarah Jhonson</h5>
+              <p class="specialty">Anesthesiologist</p>
+              <a href="https://chat.whatsapp.com/EhRPiKpgibh4lYkHMPAbIU?mode=gi_t" 
+                 class="btn btn-success btn-sm w-100" target="_blank">
+                <i class="fab fa-whatsapp me-1"></i> Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="doctor-whatsapp-card text-center p-4 rounded shadow-sm">
+              <img src="assets/img/doctors/doctors-4.jpg" alt="Neurosurgeon" class="img-fluid rounded-circle mb-3" style="width: 100px; height: 100px; object-fit: cover;">
+              <h5>Dr. Sarah Wallenstein</h5>
+              <p class="specialty">Neurosurgeon</p>
+              <a href="https://chat.whatsapp.com/D98GP69O5CmCBZQd0r36yy?mode=gi_t" 
+                 class="btn btn-success btn-sm w-100" target="_blank">
+                <i class="fab fa-whatsapp me-1"></i> Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Services (existing section) -->
+    <section id="featured-services" class="featured-services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="fas fa-robot"></i></div>
+              <h4 class="title"><a href="#ai-consultant">AI Consultation</a></h4>
+              <p class="description">24/7 AI-powered health assistant with instant symptom analysis</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon"><i class="fab fa-whatsapp"></i></div>
+              <h4 class="title"><a href="#whatsapp-doctors">WhatsApp Connect</a></h4>
+              <p class="description">Direct connection to specialists via WhatsApp instant messaging</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon"><i class="fas fa-ambulance"></i></div>
+              <h4 class="title"><a href="#contact">Emergency Care</a></h4>
+              <p class="description">24/7 emergency services with immediate response team</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+              <div class="icon"><i class="fas fa-video"></i></div>
+              <h4 class="title"><a href="#appointment">Online Booking</a></h4>
+              <p class="description">Easy online appointment booking with specialist doctors</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA Section (existing) -->
+    <section id="cta" class="cta">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="text-center">
+          <h3>Need Immediate Medical Help?</h3>
+          <p> Use our AI assistant for instant guidance or connect directly with our emergency team via WhatsApp for urgent medical situations.</p>
+          <a class="cta-btn scrollto" href="#ai-consultant">Ask AI Assistant</a>
+          <a href="https://chat.whatsapp.com/KA3aipTiHR51R5kd9lxlT6?mode=gi_t" 
+             class="cta-btn" 
+             style="background: #25D366; margin-left: 10px;" 
+             target="_blank">
+            <i class="fab fa-whatsapp me-1"></i> WhatsApp Emergency
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- About Us Section (existing) -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About Us</h2>
+          <p>TAUP Medical Center combines traditional healthcare excellence with cutting-edge AI technology to provide the best medical services in Taraz, Kazakhstan.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-right">
+            <img src="assets/img/a.jpg" class="img-fluid" alt="TAUP Medical Center Building">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h3>Innovative Healthcare with AI Integration</h3>
+            <p class="fst-italic">
+              We are the first medical center in Taraz to implement AI-powered health consultation with direct WhatsApp connectivity to specialists.
+            </p>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> AI-powered symptom analysis and triage</li>
+              <li><i class="bi bi-check-circle"></i> Direct WhatsApp connection to specialists</li>
+              <li><i class="bi bi-check-circle"></i> 24/7 emergency services with instant response</li>
+              <li><i class="bi bi-check-circle"></i> Modern diagnostic equipment and facilities</li>
+              <li><i class="bi bi-check-circle"></i> Multilingual medical staff (Kazakh, Russian, English)</li>
+            </ul>
+            <p>
+              Our mission is to make quality healthcare accessible to everyone through technology. 
+              With our AI assistant, patients can get preliminary medical guidance anytime, anywhere, 
+              and connect directly with the right specialist for their condition.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Counts Section (existing) -->
+    <section id="counts" class="counts">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row no-gutters">
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="fas fa-robot"></i>
+              <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>AI Consultations</strong> per hour available 24/7</p>
+              <a href="#ai-consultant">Try Now &raquo;</a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="fas fa-user-md"></i>
+              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Specialist Doctors</strong> available via WhatsApp</p>
+              <a href="#whatsapp-doctors">Connect &raquo;</a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="far fa-hospital"></i>
+              <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Medical Departments</strong> with AI integration</p>
+              <a href="#departments">Explore &raquo;</a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="fab fa-whatsapp"></i>
+              <span data-purecounter-start="0" data-purecounter-end="356" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>WhatsApp Consultations</strong> this month</p>
+              <a href="#ai-consultant">Start Chat &raquo;</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Appointment Section (existing) -->
+    <section id="appointment" class="appointment section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Make an Appointment</h2>
+          <p>Book an appointment with our specialists or use our AI assistant for immediate guidance.</p>
+        </div>
+
+        <form action="forms/appointment.php" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+          <div class="row">
+            <div class="col-md-4 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+            </div>
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+              <input type="tel" class="form-control" name="phone" id="phone" placeholder="Your Phone" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 form-group mt-3">
+              <input type="datetime" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" required>
+            </div>
+            <div class="col-md-4 form-group mt-3">
+              <select name="department" id="department" class="form-select">
+                <option value="">Select Department</option>
+                <option value="Cardiology">Cardiology</option>
+                <option value="Neurology">Neurology</option>
+                <option value="Anesthesiology">Anesthesiology</option>
+                <option value="Neurosurgery">Neurosurgery</option>
+                <option value="General Medicine">General Medicine</option>
+              </select>
+            </div>
+            <div class="col-md-4 form-group mt-3">
+              <select name="doctor" id="doctor" class="form-select">
+                <option value="">Select Doctor</option>
+                <option value="Arman Dauletiyarov">Dr. Arman Dauletiyarov - Cardiology</option>
+                <option value="Walter White">Dr. Walter White - General Medicine</option>
+                <option value="Sarah Jhonson">Dr. Sarah Jhonson - Anesthesiology</option>
+                <option value="Sarah Wallenstein">Dr. Sarah Wallenstein - Neurosurgery</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group mt-3">
+            <textarea class="form-control" name="message" rows="5" placeholder="Describe your symptoms (optional)"></textarea>
+          </div>
+          
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="whatsappContact">
+                <label class="form-check-label" for="whatsappContact">
+                  Contact me via WhatsApp for confirmation
+                </label>
+              </div>
+            </div>
+            <div class="col-md-6 text-end">
+              <small>Or chat instantly: 
+                <a href="#ai-consultant" class="text-primary scrollto">Ask AI Assistant</a>
+              </small>
+            </div>
+          </div>
+          
+          <div class="my-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your appointment request has been sent successfully. We'll contact you shortly!</div>
+          </div>
+          <div class="text-center">
+            <button type="submit">Make an Appointment</button>
+            <a href="https://chat.whatsapp.com/KA3aipTiHR51R5kd9lxlT6?mode=gi_t" 
+               class="btn btn-success ms-3" 
+               target="_blank">
+              <i class="fab fa-whatsapp me-1"></i> Book via WhatsApp
+            </a>
+          </div>
+        </form>
+
+      </div>
+    </section>
+
+    <!-- Departments Section (existing - ТҮЗЕТІЛГЕН СУРЕТТЕР) -->
+    <section id="departments" class="departments">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Departments</h2>
+          <p>Our specialized medical departments with AI-assisted consultation and WhatsApp connectivity.</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
+                  <h4><i class="fas fa-heartbeat me-2"></i>Cardiology</h4>
+                  <p>Heart disease diagnosis and treatment with AI-assisted ECG analysis</p>
+                </a>
+              </li>
+              <li class="nav-item mt-2">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
+                  <h4><i class="fas fa-brain me-2"></i>Neurology</h4>
+                  <p>Brain and nervous system disorders with AI symptom analysis</p>
+                </a>
+              </li>
+              <li class="nav-item mt-2">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
+                  <h4><i class="fas fa-lungs me-2"></i>Pulmonology</h4>
+                  <p>Respiratory system diseases with AI-powered lung sound analysis</p>
+                </a>
+              </li>
+              <li class="nav-item mt-2">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
+                  <h4><i class="fas fa-baby me-2"></i>Pediatrics</h4>
+                  <p>Child healthcare with AI-assisted growth monitoring</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-8">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tab-1">
+                <h3>Cardiology Department</h3>
+                <p class="fst-italic">Advanced cardiac care with AI-assisted diagnosis and remote monitoring</p>
+                <img src="assets/img/departments-1.jpg" alt="Cardiology Department" class="img-fluid">
+                <p>Our cardiology department features state-of-the-art equipment including ECG machines, echocardiography, and Holter monitors. AI integration helps in early detection of arrhythmias and predictive analysis of heart conditions.</p>
+                <div class="department-features">
+                  <h5><i class="fab fa-whatsapp text-success me-2"></i>WhatsApp Cardiology Consultation</h5>
+                  <p>Connect directly with our cardiologists for instant ECG reading analysis and consultation.</p>
+                  <a href="doctor1.html" class="btn btn-outline-primary btn-sm">Meet Dr. Arman Dauletiyarov</a>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-2">
+                <h3>Neurology Department</h3>
+                <p class="fst-italic">Comprehensive neurological care with AI-powered brain imaging analysis</p>
+                <img src="assets/img/departments-2.jpg" alt="Neurology Department" class="img-fluid">
+                <p>Specializing in treatment of brain and nervous system disorders. Our AI system assists in MRI and CT scan analysis for early detection of neurological conditions.</p>
+              </div>
+              <div class="tab-pane" id="tab-3">
+                <h3>Pulmonology Department</h3>
+                <p class="fst-italic">Respiratory health with AI-assisted lung function analysis</p>
+                <img src="assets/img/departments-3.jpg" alt="Pulmonology Department" class="img-fluid">
+                <p>Treatment of lung diseases and respiratory conditions using advanced pulmonary function tests and AI analysis of respiratory sounds.</p>
+              </div>
+              <div class="tab-pane" id="tab-4">
+                <h3>Pediatrics Department</h3>
+                <p class="fst-italic">Child healthcare with AI growth monitoring and development tracking</p>
+                <img src="assets/img/departments-4.jpg" alt="Pediatrics Department" class="img-fluid">
+                <p>Comprehensive pediatric care from infancy through adolescence. AI system tracks growth patterns and developmental milestones.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Doctors Section (existing but updated) -->
+    <section id="doctors" class="doctors section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Our Specialist Doctors</h2>
+          <p>Meet our team of expert doctors available for AI-assisted consultation and direct WhatsApp connection.</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <a href="doctor2.html"><img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt="Dr. Walter White"></a>
+                <div class="social">
+                  <a href="https://chat.whatsapp.com/E8QQyxtskLoHauCtsGMR8S?mode=gi_t" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Walter White</h4>
+                <span>Chief Medical Officer</span>
+                <p>AI-assisted general medicine consultation</p>
+                <a href="doctor2.html" class="btn btn-sm btn-outline-primary mt-2">View Profile & AI Assistant</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="200">
+              <div class="member-img">
+                <a href="doctor3.html"><img src="assets/img/doctors/doctors-2.jpg" class="img-fluid" alt="Dr. Sarah Jhonson"></a>
+                <div class="social">
+                  <a href="https://chat.whatsapp.com/EhRPiKpgibh4lYkHMPAbIU?mode=gi_t" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Sarah Jhonson</h4>
+                <span>Anesthesiologist</span>
+                <p>AI-assisted anesthesia consultation</p>
+                <a href="doctor3.html" class="btn btn-sm btn-outline-primary mt-2">View Profile & AI Assistant</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="300">
+              <div class="member-img">
+                <a href="doctor1.html"><img src="assets/img/doctors/doctors-3.jpg" class="img-fluid" alt="Dr. Arman Dauletiyarov"></a>
+                <div class="social">
+                  <a href="https://chat.whatsapp.com/D0tuYmaW5myGne7ACttRLJ?mode=gi_t" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Arman Dauletiyarov</h4>
+                <span>Cardiology Specialist</span>
+                <p>AI-assisted heart health consultation</p>
+                <a href="doctor1.html" class="btn btn-sm btn-outline-primary mt-2">View Profile & AI Assistant</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="400">
+              <div class="member-img">
+                <a href="doctor4.html"><img src="assets/img/doctors/doctors-4.jpg" class="img-fluid" alt="Dr. Sarah Wallenstein"></a>
+                <div class="social">
+                  <a href="https://chat.whatsapp.com/D98GP69O5CmCBZQd0r36yy?mode=gi_t" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Sarah Wallenstein</h4>
+                <span>Neurosurgeon</span>
+                <p>AI-assisted neurological consultation</p>
+                <a href="doctor4.html" class="btn btn-sm btn-outline-primary mt-2">View Profile & AI Assistant</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact Section (existing but updated) -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact Us</h2>
+          <p>Get in touch with us through multiple channels: AI assistant, WhatsApp, phone, or visit our clinic.</p>
+        </div>
+
+      </div>
+
+      <div>
+        <iframe
+          width="100%"
+          height="400"
+          style="border:0;"
+          loading="lazy"
+          allowfullscreen
+          src="https://maps.google.com/maps?q=Taraz,%20IT%20лицей-интернат&z=16&output=embed">
+        </iframe> 
+      </div>
+
+      <div class="container">
+
+        <div class="row mt-5">
+
+          <div class="col-lg-6">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="info-box">
+                  <i class="bx bx-map"></i>
+                  <h3>Our Address</h3>
+                  <p>Aulie Ata 31, Taraz, Kazakhstan</p>
+                  <a href="https://maps.google.com/maps?q=Aulie+Ata+31,Taraz" target="_blank" class="btn btn-sm btn-outline-primary mt-2">
+                    <i class="fas fa-directions"></i> Get Directions
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box mt-4">
+                  <i class="bx bx-envelope"></i>
+                  <h3>Email Us</h3>
+                  <p>bbekbolat29@gmail.com<br>info@taupmedical.kz</p>
+                  <a href="mailto:bbekbolat29@gmail.com" class="btn btn-sm btn-outline-primary mt-2">
+                    <i class="fas fa-envelope"></i> Send Email
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box mt-4">
+                  <i class="bx bx-phone-call"></i>
+                  <h3>Call Us</h3>
+                  <p>+7 775 811 01 52 <br>+7 778 107 42 72</p>
+                  <a href="tel:+77781074272" class="btn btn-sm btn-outline-primary mt-2">
+                    <i class="fas fa-phone"></i> Call Now
+                  </a>
+                </div>
+              </div>
+              
+              <!-- WhatsApp Contact Box -->
+              <div class="col-md-12">
+                <div class="info-box mt-4 bg-success text-white">
+                  <i class="fab fa-whatsapp"></i>
+                  <h3>WhatsApp Consultation</h3>
+                  <p>24/7 medical consultation via WhatsApp</p>
+                  <a href="https://chat.whatsapp.com/KA3aipTiHR51R5kd9lxlT6?mode=gi_t" 
+                     class="btn btn-light btn-sm mt-2" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Start WhatsApp Chat
+                  </a>
+                </div>
+              </div>
+              
+              <!-- AI Assistant Box -->
+              <div class="col-md-12">
+                <div class="info-box mt-4 bg-primary text-white">
+                  <i class="fas fa-robot"></i>
+                  <h3>AI Health Assistant</h3>
+                  <p>Instant symptom analysis and guidance</p>
+                  <a href="#ai-consultant" class="btn btn-light btn-sm mt-2 scrollto">
+                    <i class="fas fa-robot"></i> Try AI Assistant
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required="">
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="7" placeholder="Message" required=""></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center">
+                <button type="submit">Send Message</button>
+                <a href="https://chat.whatsapp.com/KA3aipTiHR51R5kd9lxlT6?mode=gi_t" 
+                   class="btn btn-success ms-3" target="_blank">
+                  <i class="fab fa-whatsapp me-1"></i> WhatsApp Message
+                </a>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer (updated) -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-info">
+              <h3>TAUP Medical Center</h3>
+              <p>
+                Aulie Ata 31 <br>
+                Taraz 0800, KAZAKHSTAN<br><br>
+                <strong>Phone:</strong> +7 778 107 42 72<br>
+                <strong>Email:</strong> info@taupmedical.kz<br>
+                <strong>WhatsApp:</strong> +7 777 810 74 272<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="https://chat.whatsapp.com/KA3aipTiHR51R5kd9lxlT6?mode=gi_t" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#ai-consultant">AI Assistant</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#doctors">Doctors</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#ai-consultant">AI Health Consultation</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#whatsapp-doctors">WhatsApp Doctor Connect</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#departments">Specialized Departments</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#appointment">Online Appointment</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#contact">Emergency Services</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-newsletter">
+            <h4>Health Newsletter</h4>
+            <p>Subscribe to receive health tips and updates from TAUP Medical Center</p>
+            <form action="" method="post">
+              <input type="email" name="email" placeholder="Your Email"><input type="submit" value="Subscribe">
+            </form>
+            <div class="mt-3">
+              <a href="#ai-consultant" class="btn btn-sm btn-outline-primary scrollto">
+                <i class="fas fa-robot me-1"></i> Try AI Assistant
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>TAUP Medical Center</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed with AI Integration for Better Healthcare
+      </div>
+    </div>
+  </footer>
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  
+  <!-- AI Assistant JS -->
+  <script src="assets/js/doctor-ai.js"></script>
+  
+  <!-- Index Page AI Chat Script -->
+  <script>
+    // Main page AI chat functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const chatMessages = document.getElementById('mainChatMessages');
+      const userInput = document.getElementById('mainUserInput');
+      const sendBtn = document.getElementById('mainSendBtn');
+      const symptomBtns = document.querySelectorAll('.symptom-btn');
+      
+      // Send message function
+      sendBtn.addEventListener('click', sendMessage);
+      userInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') sendMessage();
+      });
+      
+      // Symptom buttons
+      symptomBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const symptom = this.getAttribute('data-symptom');
+          userInput.value = symptom;
+          sendMessage();
+        });
+      });
+      
+      function sendMessage() {
+        const message = userInput.value.trim();
+        if (!message) return;
+        
+        // Add user message
+        addUserMessage(message);
+        userInput.value = '';
+        
+        // AI response
+        setTimeout(() => {
+          const aiResponse = getAIResponse(message);
+          addAIMessage(aiResponse);
+          
+          // If emergency symptoms, show emergency info
+          if (isEmergency(message)) {
+            setTimeout(() => {
+              showEmergencyAlert();
+            }, 1500);
+          }
+        }, 1000);
+      }
+      
+      function addUserMessage(text) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'message user-message mb-3';
+        messageDiv.innerHTML = `
+          <div class="d-flex">
+            <div class="flex-grow-1 me-3">
+              <div class="message-content p-3 rounded bg-primary text-white">
+                <strong>You:</strong> ${text}
+              </div>
+            </div>
+            <div class="flex-shrink-0">
+              <div class="user-avatar-small bg-secondary">
+                <i class="fas fa-user text-white"></i>
+              </div>
+            </div>
+          </div>
+        `;
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+      
+      function addAIMessage(text) {
+        // Typing indicator
+        const typingDiv = document.createElement('div');
+        typingDiv.className = 'message ai-message mb-3';
+        typingDiv.innerHTML = `
+          <div class="d-flex">
+            <div class="flex-shrink-0">
+              <div class="ai-avatar-small bg-primary">
+                <i class="fas fa-robot text-white"></i>
+              </div>
+            </div>
+            <div class="flex-grow-1 ms-3">
+              <div class="typing-indicator p-3 rounded bg-light">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+        `;
+        chatMessages.appendChild(typingDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        
+        // Show actual response
+        setTimeout(() => {
+          typingDiv.innerHTML = `
+            <div class="d-flex">
+              <div class="flex-shrink-0">
+                <div class="ai-avatar-small bg-primary">
+                  <i class="fas fa-robot text-white"></i>
+                </div>
+              </div>
+              <div class="flex-grow-1 ms-3">
+                <div class="message-content p-3 rounded bg-light">
+                  <strong>AI Assistant:</strong> ${text}
+                </div>
+              </div>
+            </div>
+          `;
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 1500);
+      }
+      
+      function getAIResponse(symptoms) {
+        const lowerSymptoms = symptoms.toLowerCase();
+        let response = '';
+        
+        // Emergency symptoms
+        if (isEmergency(lowerSymptoms)) {
+          response = '⚠️ <strong class="text-danger">EMERGENCY ALERT:</strong> Your symptoms require immediate medical attention. ';
+          response += 'Please call emergency services at <strong>103</strong> or go to the nearest hospital immediately. ';
+          response += 'You can also contact our emergency team via WhatsApp for immediate guidance.';
+        }
+        // Cardiology symptoms
+        else if (lowerSymptoms.includes('chest') || lowerSymptoms.includes('heart') || lowerSymptoms.includes('palpitation')) {
+          response = 'Based on your symptoms, I recommend consulting with a cardiologist. ';
+          response += 'Dr. Arman Dauletiyarov specializes in heart conditions. ';
+          response += 'Would you like me to connect you directly with him via WhatsApp?';
+        }
+        // Neurology symptoms
+        else if (lowerSymptoms.includes('headache') || lowerSymptoms.includes('dizziness') || lowerSymptoms.includes('numbness')) {
+          response = 'Your symptoms may require neurological evaluation. ';
+          response += 'Dr. Sarah Wallenstein is our neurosurgeon specialist. ';
+          response += 'I can help you connect with her for a consultation.';
+        }
+        // General symptoms
+        else if (lowerSymptoms.includes('fever') || lowerSymptoms.includes('cough') || lowerSymptoms.includes('pain')) {
+          response = 'Thank you for describing your symptoms. ';
+          response += 'For proper diagnosis and treatment, I recommend scheduling a consultation with one of our specialists. ';
+          response += 'You can book an appointment online or chat directly with a doctor via WhatsApp.';
+        }
+        else {
+          response = 'I understand you\'re experiencing health concerns. ';
+          response += 'To provide better guidance, please describe your symptoms in more detail. ';
+          response += 'You can also connect directly with our doctors via WhatsApp for immediate consultation.';
+        }
+        
+        // Add WhatsApp suggestion
+        if (!isEmergency(lowerSymptoms)) {
+          response += '\n\n<strong>Quick Action:</strong> <a href="https://chat.whatsapp.com/KA3aipTiHR51R5kd9lxlT6?mode=gi_t" class="text-success" target="_blank">' +
+                     '<i class="fab fa-whatsapp"></i> Chat with Doctor on WhatsApp</a>';
+        }
+        
+        return response;
+      }
+      
+      function isEmergency(symptoms) {
+        const emergencyKeywords = [
+          'severe chest pain', 'heart attack', 'stroke', 'unconscious', 
+          'difficulty breathing', 'severe bleeding', 'poisoning', 'suicide',
+          'cannot breathe', 'choking', 'severe burn', 'broken bone'
+        ];
+        
+        return emergencyKeywords.some(keyword => symptoms.includes(keyword));
+      }
+      
+      function showEmergencyAlert() {
+        const emergencyHTML = `
+          <div class="message ai-message mb-3">
+            <div class="d-flex">
+              <div class="flex-shrink-0">
+                <div class="ai-avatar-small bg-danger">
+                  <i class="fas fa-ambulance text-white"></i>
+                </div>
+              </div>
+              <div class="flex-grow-1 ms-3">
+                <div class="message-content p-3 rounded bg-danger text-white">
+                  <strong><i class="fas fa-exclamation-triangle"></i> EMERGENCY ACTION REQUIRED:</strong>
+                  <ul class="mt-2 mb-2">
+                    <li>Call <strong>103</strong> for ambulance immediately</li>
+                    <li>Do not move the patient unless in danger</li>
+                    <li>Stay on the line with emergency services</li>
+                    <li>Our emergency WhatsApp: <strong>+7 777 810 74 272</strong></li>
+                  </ul>
+                  <a href="https://chat.whatsapp.com/KA3aipTiHR51R5kd9lxlT6?mode=gi_t" 
+                     class="btn btn-light btn-sm mt-1" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Emergency
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+        
+        const emergencyDiv = document.createElement('div');
+        emergencyDiv.innerHTML = emergencyHTML;
+        chatMessages.appendChild(emergencyDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+      
+      // Emergency button function
+      window.showEmergencyInstructions = function() {
+        const emergencyModal = `
+          <div class="modal fade" id="emergencyModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                  <h5 class="modal-title"><i class="fas fa-ambulance"></i> Emergency Instructions</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="alert alert-danger">
+                    <h6><i class="fas fa-exclamation-triangle"></i> IF THIS IS A LIFE-THREATENING EMERGENCY:</h6>
+                    <ol class="mt-2">
+                      <li>Call <strong>103</strong> immediately for ambulance</li>
+                      <li>State your location clearly</li>
+                      <li>Describe the emergency situation</li>
+                      <li>Follow the operator's instructions</li>
+                    </ol>
+                  </div>
+                  
+                  <h6 class="mt-3">TAUP Emergency Contacts:</h6>
+                  <ul class="list-group">
+                    <li class="list-group-item">
+                      <i class="fas fa-phone text-danger"></i> Emergency Line: 
+                      <a href="tel:+77781074272" class="text-decoration-none">+7 778 107 42 72</a>
+                    </li>
+                    <li class="list-group-item">
+                      <i class="fab fa-whatsapp text-success"></i> WhatsApp Emergency: 
+                      <a href="https://chat.whatsapp.com/KA3aipTiHR51R5kd9lxlT6?mode=gi_t" target="_blank" class="text-decoration-none">
+                        +7 777 810 74 272
+                      </a>
+                    </li>
+                  </ul>
+                  
+                  <div class="mt-3">
+                    <p class="mb-1"><strong>Common Emergencies:</strong></p>
+                    <ul class="small">
+                      <li><strong>Chest pain:</strong> Sit down, stay calm, call 103</li>
+                      <li><strong>Difficulty breathing:</strong> Sit upright, loosen clothing</li>
+                      <li><strong>Severe bleeding:</strong> Apply pressure with clean cloth</li>
+                      <li><strong>Stroke symptoms:</strong> Remember FAST (Face, Arms, Speech, Time)</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <a href="tel:103" class="btn btn-danger">
+                    <i class="fas fa-phone"></i> Call 103
+                  </a>
+                  <a href="https://chat.whatsapp.com/KA3aipTiHR51R5kd9lxlT6?mode=gi_t" 
+                     class="btn btn-success" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Emergency
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+        
+        // Create and show modal
+        const modalContainer = document.createElement('div');
+        modalContainer.innerHTML = emergencyModal;
+        document.body.appendChild(modalContainer);
+        
+        const modal = new bootstrap.Modal(document.getElementById('emergencyModal'));
+        modal.show();
+        
+        // Remove modal after hiding
+        document.getElementById('emergencyModal').addEventListener('hidden.bs.modal', function() {
+          modalContainer.remove();
+        });
+      };
+    });
+  </script>
+
+</body>
+
+</html>

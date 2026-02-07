@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Walter White - Chief Medical Officer</title>
+    
+    <!-- CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/doctor-ai.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+      <a href="index.html" class="logo me-auto"><img src="assets/img/llogo.jpg" alt="TAUP Logo"></a>
+      
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="index.html#about">About</a></li>
+          <li><a class="nav-link" href="index.html#doctors">Doctors</a></li>
+          <li><a class="nav-link" href="index.html#contact">Contact</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a class="nav-link active" href="#ai-consultant">AI Assistant</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      
+      <a href="index.html#appointment" class="appointment-btn">Make Appointment</a>
+    </div>
+  </header>
+
+  <!-- Doctor Profile -->
+  <section class="doctor-profile-section" style="margin-top: 100px;">
+    <div class="container">
+      <div class="row">
+        <!-- Image and Contact -->
+        <div class="col-lg-4 col-md-5">
+          <div class="doctor-profile-card text-center mb-4">
+            <img src="assets/img/doctors/doctors-1.jpg" alt="Dr. Walter White" class="img-fluid rounded-circle doctor-main-img mb-3">
+            <h1>Walter White</h1>
+            <p class="specialty-tag">Chief Medical Officer</p>
+            
+            <div class="doctor-contact-info mt-4">
+              <div class="contact-item">
+                <i class="bi bi-telephone text-primary"></i>
+                <div>
+                  <small>Phone</small>
+                  <p class="mb-0">+7 778 107 42 72</p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <i class="bi bi-envelope text-primary"></i>
+                <div>
+                  <small>Email</small>
+                  <p class="mb-0">cmo@taup.kz</p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <i class="bi bi-clock text-primary"></i>
+                <div>
+                  <small>Working Hours</small>
+                  <p class="mb-0">Mon-Fri: 8:00-19:00</p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <i class="bi bi-award text-primary"></i>
+                <div>
+                  <small>Experience</small>
+                  <p class="mb-0">20+ Years</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-4">
+              <a href="#ai-consultant" class="btn btn-primary btn-lg w-100 mb-2 scrollto">
+                <i class="fas fa-robot me-2"></i>Free AI Consultation
+              </a>
+              <a href="https://chat.whatsapp.com/E8QQyxtskLoHauCtsGMR8S?mode=gi_t" 
+                 class="btn btn-success btn-lg w-100" target="_blank">
+                <i class="fab fa-whatsapp me-2"></i>Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Information -->
+        <div class="col-lg-8 col-md-7">
+          <div class="doctor-details">
+            <h2 class="section-title">About Dr. Walter White</h2>
+            <p class="lead">Experienced Chief Medical Officer with over 20 years in medical leadership and patient care.</p>
+            
+            <div class="details-section">
+              <h4><i class="bi bi-award text-primary me-2"></i>Education & Credentials</h4>
+              <ul>
+                <li>MD, Medicine - Harvard Medical School</li>
+                <li>MBA, Healthcare Management - Stanford University</li>
+                <li>Board Certified in Internal Medicine</li>
+                <li>Fellow, American College of Physicians</li>
+                <li>Chief Medical Officer Certification</li>
+              </ul>
+            </div>
+            
+            <div class="details-section">
+              <h4><i class="bi bi-clipboard-check text-primary me-2"></i>Specializations</h4>
+              <div class="specializations">
+                <span class="specialization-badge">Healthcare Management</span>
+                <span class="specialization-badge">Medical Administration</span>
+                <span class="specialization-badge">Quality Improvement</span>
+                <span class="specialization-badge">Patient Safety</span>
+                <span class="specialization-badge">Clinical Governance</span>
+                <span class="specialization-badge">Strategic Planning</span>
+              </div>
+            </div>
+            
+            <div class="details-section">
+              <h4><i class="bi bi-calendar-check text-primary me-2"></i>Leadership Roles</h4>
+              <ul>
+                <li>Chief Medical Officer - TAUP Medical Center (2018-Present)</li>
+                <li>Medical Director - City General Hospital (2010-2018)</li>
+                <li>Department Head - Internal Medicine (2005-2010)</li>
+                <li>Clinical Professor - Medical University</li>
+                <li>Healthcare Consultant - National Level</li>
+              </ul>
+            </div>
+            
+            <div class="details-section">
+              <h4><i class="bi bi-geo-alt text-primary me-2"></i>Location & Schedule</h4>
+              <p><strong>Clinic:</strong> TAUP Medical Center, Aulie Ata 31, Taraz</p>
+              <p><strong>Consultation Hours:</strong> Monday to Friday, 8:00 AM - 7:00 PM</p>
+              <p><strong>Administrative Hours:</strong> Available for strategic meetings and consultations</p>
+              <p><strong>Emergency Access:</strong> Available 24/7 for critical cases</p>
+            </div>
+            
+            <div class="details-section">
+              <h4><i class="bi bi-people text-primary me-2"></i>Team Leadership</h4>
+              <p>Dr. White leads a team of 50+ medical professionals including specialists, nurses, and administrative staff. He oversees all medical operations and ensures the highest standards of patient care.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Consultant Section -->
+  <section id="ai-consultant" class="ai-consultant-section py-5" style="background-color: #f8f9fa;">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <div class="ai-chat-widget">
+            <div class="card shadow-sm">
+              <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">
+                  <i class="fas fa-robot me-2"></i>AI Health Assistant for Chief Medical Officer
+                </h5>
+                <span class="badge bg-light text-primary">
+                  <i class="fas fa-bolt"></i> Instant Response
+                </span>
+              </div>
+              <div class="card-body">
+                <!-- AI Chat -->
+                <div class="ai-chat-box" data-doctor-ai="walter">
+                  <div class="chat-messages" id="chatMessagesWalter" style="height: 250px; overflow-y: auto; margin-bottom: 15px;">
+                    <div class="message ai-message mb-3">
+                      <div class="d-flex">
+                        <div class="flex-shrink-0">
+                          <div class="ai-avatar-small bg-primary">
+                            <i class="fas fa-robot text-white"></i>
+                          </div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                          <div class="message-content p-3 rounded bg-light">
+                            <strong>AI Health Assistant:</strong> Hello! I'm here to help you prepare for consultation with Dr. Walter White, our Chief Medical Officer. 
+                            Please describe your symptoms or medical concerns. I'll provide preliminary advice and help you connect directly with Dr. White.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="chat-input">
+                    <div class="input-group">
+                      <input 
+                        type="text" 
+                        class="form-control ai-chat-input" 
+                        id="userInputWalter" 
+                        placeholder="Describe your symptoms or medical concerns..."
+                        aria-label="Describe symptoms"
+                      >
+                      <button class="btn btn-primary ai-chat-send" type="button" id="sendBtnWalter">
+                        <i class="fas fa-paper-plane"></i> Send
+                      </button>
+                    </div>
+                    
+                    <div class="symptom-tags mt-3">
+                      <small class="text-muted d-block mb-2">Common Concerns:</small>
+                      <div class="d-flex flex-wrap gap-2">
+                        <button class="btn btn-sm btn-outline-primary symptom-quick-btn" data-symptom="General health checkup">
+                          <i class="fas fa-stethoscope me-1"></i> Health Checkup
+                        </button>
+                        <button class="btn btn-sm btn-outline-primary symptom-quick-btn" data-symptom="Second opinion needed">
+                          <i class="fas fa-user-md me-1"></i> Second Opinion
+                        </button>
+                        <button class="btn btn-sm btn-outline-primary symptom-quick-btn" data-symptom="Multiple health issues">
+                          <i class="fas fa-clipboard-list me-1"></i> Multiple Issues
+                        </button>
+                        <button class="btn btn-sm btn-outline-primary symptom-quick-btn" data-symptom="Complex medical case">
+                          <i class="fas fa-brain me-1"></i> Complex Case
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- WhatsApp Connection -->
+                <div class="whatsapp-contact mt-4 ai-whatsapp-section" id="whatsappContactWalter" style="display: none;">
+                  <div class="alert alert-success border-0">
+                    <div class="d-flex align-items-center">
+                      <div class="flex-shrink-0">
+                        <i class="fab fa-whatsapp fa-2x me-3"></i>
+                      </div>
+                      <div class="flex-grow-1">
+                        <h6 class="alert-heading mb-2">
+                          <i class="fas fa-user-md me-2"></i>Connect with Dr. Walter White
+                        </h6>
+                        <p class="mb-3">Based on your concerns, our AI recommends consulting with our Chief Medical Officer. Click below to chat directly with Dr. White on WhatsApp:</p>
+                        
+                        <div class="d-grid gap-2 d-md-flex">
+                          <a href="https://chat.whatsapp.com/E8QQyxtskLoHauCtsGMR8S?mode=gi_t" 
+                             class="btn btn-success btn-lg flex-grow-1 whatsapp-direct-btn" 
+                             target="_blank">
+                            <i class="fab fa-whatsapp me-2"></i>Chat on WhatsApp
+                          </a>
+                          <a href="tel:+77781074272" class="btn btn-outline-danger btn-lg">
+                            <i class="fas fa-phone me-2"></i>Call Now
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- AI Benefits -->
+        <div class="col-lg-4 mt-4 mt-lg-0">
+          <div class="ai-benefits-card p-4 bg-white rounded shadow-sm h-100">
+            <h4 class="text-primary mb-4">
+              <i class="fas fa-crown text-warning me-2"></i>Chief Medical Officer AI Assistant
+            </h4>
+            
+            <div class="benefit-item mb-3">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <i class="fas fa-users text-info fa-lg me-3"></i>
+                </div>
+                <div class="flex-grow-1">
+                  <h6 class="mb-1">Comprehensive Assessment</h6>
+                  <p class="text-muted small mb-0">Holistic evaluation of complex medical cases</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="benefit-item mb-3">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <i class="fas fa-clipboard-check text-success fa-lg me-3"></i>
+                </div>
+                <div class="flex-grow-1">
+                  <h6 class="mb-1">Second Opinion Service</h6>
+                  <p class="text-muted small mb-0">Expert review of existing diagnoses</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="benefit-item mb-3">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <i class="fas fa-project-diagram text-primary fa-lg me-3"></i>
+                </div>
+                <div class="flex-grow-1">
+                  <h6 class="mb-1">Multi-Specialty Coordination</h6>
+                  <p class="text-muted small mb-0">Coordinates between different specialists</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="benefit-item mb-3">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <i class="fas fa-chart-line text-warning fa-lg me-3"></i>
+                </div>
+                <div class="flex-grow-1">
+                  <h6 class="mb-1">Long-term Health Planning</h6>
+                  <p class="text-muted small mb-0">Strategic health management advice</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="benefit-item">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <i class="fas fa-handshake text-success fa-lg me-3"></i>
+                </div>
+                <div class="flex-grow-1">
+                  <h6 class="mb-1">Executive Health Services</h6>
+                  <p class="text-muted small mb-0">Premium healthcare for executives</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-4 pt-3 border-top">
+              <h6 class="text-primary mb-2">
+                <i class="fas fa-question-circle me-2"></i>When to Consult CMO:
+              </h6>
+              <ul class="small text-muted mb-0">
+                <li>Complex medical cases requiring multiple specialists</li>
+                <li>Need for second opinion on serious diagnosis</li>
+                <li>Executive health assessments</li>
+                <li>Long-term chronic disease management</li>
+                <li>Healthcare strategy and planning</li>
+              </ul>
+            </div>
+            
+            <div class="mt-4 pt-3 border-top">
+              <small class="text-muted">
+                <i class="fas fa-exclamation-circle me-1"></i>
+                Note: AI assistant provides preliminary guidance. Dr. White provides comprehensive medical leadership and coordination.
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CMO Services -->
+  <section class="cmo-services py-5">
+    <div class="container">
+      <div class="section-title">
+        <h2>Chief Medical Officer Services</h2>
+        <p>Comprehensive medical leadership and coordination services</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="service-card text-center p-4 h-100">
+            <div class="service-icon mb-3">
+              <i class="fas fa-user-md fa-2x text-primary"></i>
+            </div>
+            <h5>Medical Leadership</h5>
+            <p>Overall medical direction and supervision of clinical services</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="service-card text-center p-4 h-100">
+            <div class="service-icon mb-3">
+              <i class="fas fa-clipboard-check fa-2x text-success"></i>
+            </div>
+            <h5>Quality Assurance</h5>
+            <p>Ensuring highest standards of patient care and safety</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="service-card text-center p-4 h-100">
+            <div class="service-icon mb-3">
+              <i class="fas fa-project-diagram fa-2x text-info"></i>
+            </div>
+            <h5>Case Coordination</h5>
+            <p>Coordinating complex cases across multiple specialties</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/doctor-ai.js"></script>
+  
+  <script>
+    // Walter White AI Chat Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const chatMessages = document.getElementById('chatMessagesWalter');
+      const userInput = document.getElementById('userInputWalter');
+      const sendBtn = document.getElementById('sendBtnWalter');
+      const whatsappSection = document.getElementById('whatsappContactWalter');
+      const symptomButtons = document.querySelectorAll('.symptom-quick-btn');
+      
+      // Send button
+      sendBtn.addEventListener('click', sendMessage);
+      userInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') sendMessage();
+      });
+      
+      // Symptom buttons
+      symptomButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const symptom = this.getAttribute('data-symptom');
+          userInput.value = symptom;
+          sendMessage();
+        });
+      });
+      
+      function sendMessage() {
+        const message = userInput.value.trim();
+        if (!message) return;
+        
+        // Show user message
+        addUserMessage(message);
+        userInput.value = '';
+        
+        // Show AI response
+        setTimeout(() => {
+          const aiResponse = getAIResponse(message);
+          addAIMessage(aiResponse);
+          
+          // Show WhatsApp section if needed
+          if (message.toLowerCase().includes('complex') || 
+              message.toLowerCase().includes('second opinion') ||
+              message.toLowerCase().includes('multiple') ||
+              message.toLowerCase().includes('chronic')) {
+            setTimeout(() => {
+              whatsappSection.style.display = 'block';
+              whatsappSection.scrollIntoView({ behavior: 'smooth' });
+            }, 1000);
+          }
+        }, 1000);
+      }
+      
+      function addUserMessage(text) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'message user-message mb-3';
+        messageDiv.innerHTML = `
+          <div class="d-flex">
+            <div class="flex-grow-1 me-3">
+              <div class="message-content p-3 rounded bg-primary text-white">
+                <strong>You:</strong> ${text}
+              </div>
+            </div>
+            <div class="flex-shrink-0">
+              <div class="user-avatar-small bg-secondary">
+                <i class="fas fa-user text-white"></i>
+              </div>
+            </div>
+          </div>
+        `;
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+      
+      function addAIMessage(text) {
+        // Typing animation
+        const typingDiv = document.createElement('div');
+        typingDiv.className = 'message ai-message mb-3';
+        typingDiv.innerHTML = `
+          <div class="d-flex">
+            <div class="flex-shrink-0">
+              <div class="ai-avatar-small bg-primary">
+                <i class="fas fa-robot text-white"></i>
+              </div>
+            </div>
+            <div class="flex-grow-1 ms-3">
+              <div class="typing-indicator p-3 rounded bg-light">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+        `;
+        chatMessages.appendChild(typingDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        
+        // Show actual response
+        setTimeout(() => {
+          typingDiv.innerHTML = `
+            <div class="d-flex">
+              <div class="flex-shrink-0">
+                <div class="ai-avatar-small bg-primary">
+                  <i class="fas fa-robot text-white"></i>
+                </div>
+              </div>
+              <div class="flex-grow-1 ms-3">
+                <div class="message-content p-3 rounded bg-light">
+                  <strong>AI Assistant:</strong> ${text}
+                </div>
+              </div>
+            </div>
+          `;
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 1500);
+      }
+      
+      function getAIResponse(concerns) {
+        const lowerConcerns = concerns.toLowerCase();
+        let response = '';
+        
+        if (lowerConcerns.includes('second opinion') || lowerConcerns.includes('review diagnosis')) {
+          response = 'Second opinions are valuable for complex medical decisions. ';
+          response += 'Dr. Walter White, as Chief Medical Officer, can provide comprehensive review of your case. ';
+          response += 'He coordinates with multiple specialists to ensure accurate diagnosis and treatment planning.';
+        } 
+        else if (lowerConcerns.includes('complex') || lowerConcerns.includes('multiple issues')) {
+          response = 'Complex medical cases benefit from coordinated care. ';
+          response += 'Dr. White specializes in managing cases involving multiple health issues. ';
+          response += 'He can develop an integrated treatment plan addressing all your concerns.';
+        }
+        else if (lowerConcerns.includes('chronic') || lowerConcerns.includes('long-term')) {
+          response = 'Chronic disease management requires strategic planning. ';
+          response += 'Dr. White provides long-term health management strategies. ';
+          response += 'He focuses on improving quality of life and preventing complications.';
+        }
+        else if (lowerConcerns.includes('executive') || lowerConcerns.includes('comprehensive checkup')) {
+          response = 'Executive health services provide comprehensive assessment. ';
+          response += 'Dr. White offers premium health evaluations for busy professionals. ';
+          response += 'These include detailed testing, risk assessment, and personalized health plans.';
+        }
+        else if (lowerConcerns.includes('quality') || lowerConcerns.includes('safety')) {
+          response = 'Healthcare quality and safety are top priorities. ';
+          response += 'Dr. White oversees all clinical standards and patient safety protocols. ';
+          response += 'He ensures the highest quality of care at TAUP Medical Center.';
+        }
+        else {
+          response = 'Thank you for sharing your concerns. ';
+          response += 'As Chief Medical Officer, Dr. Walter White provides comprehensive medical leadership. ';
+          response += 'He specializes in complex case management, second opinions, and strategic health planning.';
+        }
+        
+        response += '\n\nWould you like me to connect you directly with Dr. Walter White via WhatsApp for executive consultation?';
+        return response;
+      }
+    });
+  </script>
+</body>
+</html>

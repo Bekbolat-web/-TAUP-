@@ -1,0 +1,727 @@
+/* AI Консультант стильдері - дәрігерлер парақшасы үшін */
+
+/* AI чат бөлімі */
+.ai-consultant-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.ai-chat-widget {
+    height: 100%;
+}
+
+.ai-chat-widget .card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.ai-chat-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    max-height: 400px;
+}
+
+/* Хабарламалар */
+.message {
+    margin-bottom: 15px;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.ai-avatar-small {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #3fbbc0;
+    color: white;
+}
+
+.user-avatar-small {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #6c757d;
+    color: white;
+}
+
+.message-content {
+    border-radius: 15px;
+    max-width: 85%;
+    word-wrap: break-word;
+}
+
+.ai-message .message-content {
+    background: white;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.user-message .message-content {
+    background: linear-gradient(135deg, #3fbbc0 0%, #2a8a8e 100%);
+    color: white;
+    box-shadow: 0 2px 5px rgba(63, 187, 192, 0.2);
+}
+
+/* Чат енгізу бөлімі */
+.chat-input {
+    margin-top: 15px;
+}
+
+.chat-input .input-group {
+    border-radius: 25px;
+    overflow: hidden;
+    border: 1px solid #dee2e6;
+}
+
+.chat-input input {
+    border: none;
+    padding: 12px 20px;
+}
+
+.chat-input button {
+    border-radius: 0 25px 25px 0;
+    padding: 12px 25px;
+}
+
+.symptom-tags {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #dee2e6;
+    margin-top: 15px;
+}
+
+.symptom-btn {
+    border-radius: 20px;
+    padding: 6px 15px;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    border: 1px solid #dee2e6;
+    background: white;
+}
+
+.symptom-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: #3fbbc0;
+    color: white;
+    border-color: #3fbbc0;
+}
+
+/* WhatsApp байланыс бөлімі */
+.whatsapp-contact .alert {
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+}
+
+.whatsapp-btn {
+    padding: 12px 25px;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    background: #25D366;
+    border: none;
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+    background: #128C7E;
+    color: white;
+}
+
+/* AI артықшылықтары карточкасы */
+.ai-benefits-card {
+    border: 1px solid #dee2e6;
+    border-radius: 15px;
+    background: white;
+}
+
+.benefit-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.benefit-item:last-child {
+    border-bottom: none;
+}
+
+.benefit-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3fbbc0;
+}
+
+/* Дәрігер профиль карточкасы */
+.doctor-profile-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 100px;
+    border: 1px solid #e9ecef;
+}
+
+.doctor-main-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 5px solid #3fbbc0;
+    box-shadow: 0 5px 15px rgba(63, 187, 192, 0.2);
+}
+
+.specialty-tag {
+    color: #3fbbc0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding: 5px 15px;
+    background: #e8f7f7;
+    border-radius: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+.contact-item i {
+    font-size: 1.2rem;
+    margin-right: 15px;
+    color: #3fbbc0;
+    width: 24px;
+    text-align: center;
+}
+
+/* Детальдар бөлімі */
+.details-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.details-section:last-child {
+    border-bottom: none;
+}
+
+.specializations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.specialization-badge {
+    background: #e8f7f7;
+    color: #2a8a8e;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.specialization-badge:hover {
+    background: #3fbbc0;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Жазу анимациясы */
+.typing-indicator {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.typing-indicator span {
+    height: 8px;
+    width: 8px;
+    background: #6c757d;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 2px;
+    animation: typing 1.5s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%, 100% { transform: translateY(0); opacity: 0.6; }
+    50% { transform: translateY(-5px); opacity: 1; }
+}
+
+/* Жедел көмек түймесі */
+.emergency-btn {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 12px 25px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.emergency-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
+    color: white;
+}
+
+/* WhatsApp дәрігер карточкалары */
+.doctor-whatsapp-card {
+    background: white;
+    border: 1px solid #dee2e6;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.doctor-whatsapp-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-color: #25D366;
+}
+
+.doctor-whatsapp-card .specialty {
+    color: #3fbbc0;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+/* Мобильдік стильдер */
+@media (max-width: 768px) {
+    .doctor-main-img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .doctor-profile-card {
+        position: static;
+        margin-bottom: 30px;
+        padding: 20px;
+    }
+    
+    .ai-chat-widget {
+        height: 400px;
+    }
+    
+    .chat-messages {
+        max-height: 300px;
+    }
+    
+    .message-content {
+        max-width: 95%;
+        font-size: 0.9rem;
+    }
+    
+    .specializations {
+        justify-content: center;
+    }
+    
+    .symptom-btn {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+        margin: 3px;
+    }
+    
+    .contact-item {
+        padding: 8px 0;
+        font-size: 0.9rem;
+    }
+    
+    .whatsapp-btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Планшет стильдері */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .ai-chat-widget {
+        height: 450px;
+    }
+    
+    .chat-messages {
+        max-height: 350px;
+    }
+    
+    .doctor-main-img {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+/* Жедел көмек модалды терезесі */
+.emergency-modal .modal-header {
+    background: #dc3545;
+    color: white;
+}
+
+.emergency-modal .modal-body {
+    padding: 20px;
+}
+
+.emergency-modal .list-group-item {
+    border-left: none;
+    border-right: none;
+    padding: 12px 0;
+}
+
+.emergency-modal .list-group-item:first-child {
+    border-top: none;
+}
+
+.emergency-modal .list-group-item:last-child {
+    border-bottom: none;
+}
+
+/* Навигацияға AI түймесі */
+.ai-nav-btn {
+    background: linear-gradient(135deg, #3fbbc0 0%, #2a8a8e 100%);
+    color: white;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    margin-left: 10px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.ai-nav-btn:hover {
+    background: linear-gradient(135deg, #2a8a8e 0%, #1a6a6e 100%);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(63, 187, 192, 0.3);
+}
+
+/* AI статистика */
+.ai-stats .count-box {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.ai-stats .count-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.ai-stats .count-box i {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #3fbbc0;
+}
+
+.ai-stats .count-box span {
+    font-size: 36px;
+    font-weight: 700;
+    color: #2a8a8e;
+    display: block;
+    margin: 10px 0;
+}
+
+/* AI рекомендациялары */
+.ai-recommendation {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    border-left: 4px solid #2196f3;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.ai-recommendation h5 {
+    color: #1976d2;
+    margin-bottom: 15px;
+}
+
+.ai-recommendation ul {
+    margin-bottom: 0;
+    padding-left: 20px;
+}
+
+.ai-recommendation li {
+    margin-bottom: 8px;
+    color: #1565c0;
+}
+
+/* Жедел жауап индикаторы */
+.instant-response-badge {
+    background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+}
+
+.instant-response-badge i {
+    margin-right: 5px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* AI сенімділік мәлімдемесі */
+.ai-disclaimer {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #856404;
+}
+
+.ai-disclaimer i {
+    color: #ffc107;
+    margin-right: 10px;
+}
+
+/* WhatsApp жылдам байланыс түймелері */
+.whatsapp-quick-connect {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.whatsapp-quick-btn {
+    flex: 1;
+    min-width: 120px;
+    background: #25D366;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatsapp-quick-btn:hover {
+    background: #128C7E;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-quick-btn i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.whatsapp-quick-btn span {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* AI сұрақтар жинағы */
+.ai-faq {
+    margin-top: 30px;
+}
+
+.ai-faq-item {
+    margin-bottom: 15px;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.ai-faq-question {
+    background: #f8f9fa;
+    padding: 15px;
+    font-weight: 600;
+    color: #2a8a8e;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ai-faq-answer {
+    padding: 15px;
+    background: white;
+    border-top: 1px solid #dee2e6;
+    display: none;
+}
+
+.ai-faq-item.active .ai-faq-answer {
+    display: block;
+}
+
+.ai-faq-item.active .ai-faq-question {
+    background: #e8f7f7;
+}
+
+/* AI бағалау жүйесі */
+.ai-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 15px;
+}
+
+.ai-rating-star {
+    color: #ffc107;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ai-rating-star:hover {
+    transform: scale(1.2);
+}
+
+.ai-feedback {
+    margin-top: 15px;
+}
+
+.ai-feedback textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* AI тілдік қолдау */
+.ai-language-selector {
+    margin-bottom: 15px;
+}
+
+.ai-language-btn {
+    padding: 5px 15px;
+    border: 1px solid #dee2e6;
+    background: white;
+    border-radius: 20px;
+    margin-right: 5px;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.ai-language-btn.active {
+    background: #3fbbc0;
+    color: white;
+    border-color: #3fbbc0;
+}
+
+.ai-language-btn:hover:not(.active) {
+    background: #f8f9fa;
+}
+
+/* AI дәрігер таңдауы */
+.ai-doctor-selection {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid #dee2e6;
+    margin-top: 20px;
+}
+
+.ai-doctor-option {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ai-doctor-option:hover {
+    border-color: #3fbbc0;
+    background: #f8f9fa;
+}
+
+.ai-doctor-option.selected {
+    border-color: #3fbbc0;
+    background: #e8f7f7;
+}
+
+.ai-doctor-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.ai-doctor-info h6 {
+    margin-bottom: 5px;
+    color: #2a8a8e;
+}
+
+.ai-doctor-info p {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-bottom: 0;
+}

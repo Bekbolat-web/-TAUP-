@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>TAUP Medical News - Latest Updates</title>
+  <meta content="Latest medical news and updates from TAUP Medical Center in Taraz, Kazakhstan" name="description">
+  <meta content="medical news, health updates, hospital news, Taraz healthcare" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/llogo.jpg" rel="icon">
+  <link href="assets/img/llogo.jpg" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  
+  <!-- Main CSS Files -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/doctor-ai.css" rel="stylesheet">
+  
+  <style>
+    /* News Page Specific Styles */
+    .news-hero-section {
+      background: linear-gradient(135deg, #3fbbc0 0%, #2a8a8e 100%);
+      color: white;
+      padding: 80px 0 60px;
+      margin-top: 70px;
+    }
+    
+    .news-title {
+      color: #2a8a8e;
+      border-bottom: 3px solid #3fbbc0;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
+    
+    .ct-blog {
+      margin-bottom: 30px;
+    }
+    
+    .ct-blog .inner {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    
+    .ct-blog .inner:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+    
+    .fauxcrop {
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .fauxcrop img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .ct-blog .inner:hover .fauxcrop img {
+      transform: scale(1.1);
+    }
+    
+    .ct-blog-content {
+      padding: 20px;
+    }
+    
+    .ct-blog-date {
+      float: right;
+      text-align: center;
+      background: #f8f9fa;
+      border-radius: 5px;
+      padding: 8px 12px;
+      margin-bottom: 15px;
+    }
+    
+    .ct-blog-date span {
+      display: block;
+      font-size: 12px;
+      color: #6c757d;
+      text-transform: uppercase;
+    }
+    
+    .ct-blog-date strong {
+      display: block;
+      font-size: 20px;
+      color: #3fbbc0;
+      line-height: 1;
+    }
+    
+    .ct-blog-header {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #2a8a8e;
+      margin-bottom: 10px;
+      line-height: 1.4;
+      min-height: 70px;
+    }
+    
+    .blog-excerpt {
+      color: #6c757d;
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+    
+    .read-more {
+      color: #3fbbc0;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+    
+    .read-more:hover {
+      color: #2a8a8e;
+      padding-left: 5px;
+    }
+    
+    .read-more::after {
+      content: "→";
+      margin-left: 5px;
+      transition: margin-left 0.3s ease;
+    }
+    
+    .read-more:hover::after {
+      margin-left: 10px;
+    }
+    
+    .ai-features {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 4px solid #3fbbc0;
+    }
+    
+    .ai-features h6 {
+      color: #2a8a8e;
+      margin-bottom: 15px;
+    }
+    
+    .ai-features ul {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .ai-features li {
+      margin-bottom: 8px;
+      color: #6c757d;
+    }
+    
+    /* News Details Modal */
+    .news-modal .modal-header {
+      background: linear-gradient(135deg, #3fbbc0 0%, #2a8a8e 100%);
+      color: white;
+    }
+    
+    .news-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+    
+    .news-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .news-category {
+      background: #e8f7f7;
+      color: #2a8a8e;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    
+    /* Newsletter Section */
+    .newsletter-section {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 60px 0;
+      margin-top: 60px;
+      border-radius: 15px;
+    }
+    
+    .newsletter-form .input-group {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .newsletter-form input {
+      border-radius: 25px 0 0 25px;
+      padding: 12px 20px;
+      border: 1px solid #dee2e6;
+    }
+    
+    .newsletter-form button {
+      border-radius: 0 25px 25px 0;
+      background: #3fbbc0;
+      border: 1px solid #3fbbc0;
+      color: white;
+      padding: 12px 30px;
+    }
+    
+    @media (max-width: 768px) {
+      .news-hero-section {
+        padding: 60px 0 40px;
+        margin-top: 60px;
+      }
+      
+      .ct-blog-header {
+        min-height: auto;
+      }
+      
+      .fauxcrop {
+        height: 180px;
+      }
+      
+      .news-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+      <a href="index.html" class="logo me-auto"><img src="assets/img/llogo.jpg" alt="TAUP Medical Center"></a>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="index.html#about">About</a></li>
+          <li><a class="nav-link" href="index.html#ai-consultant">AI Assistant</a></li>
+          <li><a class="nav-link" href="index.html#doctors">Doctors</a></li>
+          <li><a class="nav-link" href="index.html#contact">Contact</a></li>
+          <li><a class="nav-link active" href="news.html">News</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+
+      <a href="index.html#appointment" class="appointment-btn">Make Appointment</a>
+    </div>
+  </header>
+
+  <!-- News Hero Section -->
+  <section class="news-hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h1 class="text-white display-4 fw-bold">Medical News & Updates</h1>
+          <p class="lead text-white mb-0">Stay informed with the latest healthcare news, medical breakthroughs, and updates from TAUP Medical Center.</p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <a href="ai-chatbot.html" class="btn btn-light btn-lg">
+            <i class="fas fa-robot me-2"></i>Try AI Health Assistant
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent News Section -->
+  <section class="recentNews py-5">
+    <div class="container">
+      <h2 class="news-title">Recent Medical News</h2>
+      
+      <!-- AI Health Assistant News -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="card border-0 shadow-lg">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="assets/img/gallery/gallery-6.jpg" class="img-fluid rounded-start h-100" alt="AI Health Assistant Launch" style="object-fit: cover;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body p-4">
+                  <div class="d-flex justify-content-between align-items-start mb-3">
+                    <span class="badge bg-primary">BREAKING NEWS</span>
+                    <small class="text-muted">March 15, 2024</small>
+                  </div>
+                  <h3 class="card-title">TAUP Launches AI-Powered Health Assistant</h3>
+                  <p class="card-text">TAUP Medical Center introduces an advanced AI health assistant that provides 24/7 medical consultation and connects patients directly with specialists via WhatsApp.</p>
+                  <p class="card-text">The AI assistant can analyze symptoms, provide preliminary advice, and help patients find the right specialist for their condition. Available in multiple languages including Kazakh, Russian, and English.</p>
+                  <div class="mt-4">
+                    <button class="btn btn-primary me-2" onclick="showNewsDetail('ai-launch')">
+                      <i class="fas fa-newspaper me-1"></i>Read Full Story
+                    </button>
+                    <a href="ai-chatbot.html" class="btn btn-outline-primary">
+                      <i class="fas fa-robot me-1"></i>Try AI Assistant
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- News Item 1 -->
+        <div class="ct-blog col-sm-6 col-md-4">
+          <div class="inner">
+            <div class="fauxcrop">
+              <img alt="New Cardiology Equipment" src="assets/img/gallery/gallery-5.jpg">
+            </div>
+            <div class="ct-blog-content">
+              <div class="ct-blog-date">
+                <span>February</span><strong>27</strong>
+              </div>
+              <h3 class="ct-blog-header">
+                Advanced Cardiology Equipment Installed
+              </h3>
+              <p class="blog-excerpt">State-of-the-art echocardiography machine enhances cardiac diagnostics at TAUP Medical Center.</p>
+              <a href="#" class="read-more" onclick="showNewsDetail('cardiology-equipment')">Read More</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- News Item 2 -->
+        <div class="ct-blog col-sm-6 col-md-4">
+          <div class="inner">
+            <div class="fauxcrop">
+              <img alt="Health Awareness Campaign" src="assets/img/gallery/gallery-1.jpg">
+            </div>
+            <div class="ct-blog-content">
+              <div class="ct-blog-date">
+                <span>February</span><strong>25</strong>
+              </div>
+              <h3 class="ct-blog-header">
+                Heart Health Awareness Campaign
+              </h3>
+              <p class="blog-excerpt">Free heart screenings and educational workshops for the community in Taraz.</p>
+              <a href="#" class="read-more" onclick="showNewsDetail('heart-campaign')">Read More</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- News Item 3 -->
+        <div class="ct-blog col-sm-6 col-md-4">
+          <div class="inner">
+            <div class="fauxcrop">
+              <img alt="New Specialist Doctor" src="assets/img/gallery/gallery-2.jpg">
+            </div>
+            <div class="ct-blog-content">
+              <div class="ct-blog-date">
+                <span>February</span><strong>23</strong>
+              </div>
+              <h3 class="ct-blog-header">
+                Welcome Dr. Arman Dauletiyarov
+              </h3>
+              <p class="blog-excerpt">Experienced cardiologist joins TAUP Medical Center team, specializing in advanced cardiac care.</p>
+              <a href="doctor1.html" class="read-more">View Profile</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- News Item 4 -->
+        <div class="ct-blog col-sm-6 col-md-4">
+          <div class="inner">
+            <div class="fauxcrop">
+              <img alt="Emergency Services" src="assets/img/gallery/gallery-3.jpg">
+            </div>
+            <div class="ct-blog-content">
+              <div class="ct-blog-date">
+                <span>February</span><strong>20</strong>
+              </div>
+              <h3 class="ct-blog-header">
+                24/7 Emergency Services Enhanced
+              </h3>
+              <p class="blog-excerpt">Improved emergency response with direct WhatsApp connection and AI triage system.</p>
+              <a href="#" class="read-more" onclick="showNewsDetail('emergency-services')">Read More</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- News Item 5 -->
+        <div class="ct-blog col-sm-6 col-md-4">
+          <div class="inner">
+            <div class="fauxcrop">
+              <img alt="Medical Training" src="assets/img/gallery/gallery-4.jpg">
+            </div>
+            <div class="ct-blog-content">
+              <div class="ct-blog-date">
+                <span>February</span><strong>16</strong>
+              </div>
+              <h3 class="ct-blog-header">
+                Medical Staff Training Program
+              </h3>
+              <p class="blog-excerpt">Continuous medical education program launched for healthcare professionals.</p>
+              <a href="#" class="read-more" onclick="showNewsDetail('training-program')">Read More</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- News Item 6 -->
+        <div class="ct-blog col-sm-6 col-md-4">
+          <div class="inner">
+            <div class="fauxcrop">
+              <img alt="Community Health" src="assets/img/d.jpg">
+            </div>
+            <div class="ct-blog-content">
+              <div class="ct-blog-date">
+                <span>February</span><strong>12</strong>
+              </div>
+              <h3 class="ct-blog-header">
+                Community Health Initiative
+              </h3>
+              <p class="blog-excerpt">Free health camps and medical checkups organized in local communities of Taraz region.</p>
+              <a href="#" class="read-more" onclick="showNewsDetail('community-health')">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Newsletter Section -->
+      <div class="newsletter-section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+              <h3 class="mb-3">Subscribe to Medical Updates</h3>
+              <p class="mb-4">Get the latest health news, medical tips, and updates from TAUP Medical Center directly to your inbox.</p>
+              <div class="newsletter-form">
+                <div class="input-group">
+                  <input type="email" class="form-control" placeholder="Your email address" id="newsletterEmail">
+                  <button class="btn" type="button" onclick="subscribeNewsletter()">
+                    Subscribe
+                  </button>
+                </div>
+                <div class="form-check mt-3">
+                  <input class="form-check-input" type="checkbox" id="whatsappUpdates">
+                  <label class="form-check-label" for="whatsappUpdates">
+                    Also send updates via WhatsApp
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- AI Chat Widget in News Page -->
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="card border-primary shadow-sm">
+            <div class="card-header bg-primary text-white">
+              <h5 class="mb-0"><i class="fas fa-robot me-2"></i>Try Our AI Health Assistant</h5>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-8">
+                  <p>Have health questions? Try our AI assistant for instant guidance:</p>
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Ask a health question..." id="newsChatInput">
+                    <button class="btn btn-primary" type="button" id="newsChatSend">
+                      <i class="fas fa-paper-plane"></i>
+                    </button>
+                  </div>
+                  <div class="chat-response bg-light p-3 rounded" id="newsChatResponse" style="min-height: 100px; display: none;">
+                    <!-- AI response will appear here -->
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="ai-features">
+                    <h6><i class="fas fa-check-circle text-success me-2"></i>AI Assistant Features:</h6>
+                    <ul class="small">
+                      <li>Symptom analysis</li>
+                      <li>Doctor recommendations</li>
+                      <li>Emergency guidance</li>
+                      <li>24/7 availability</li>
+                      <li>WhatsApp connection</li>
+                      <li>Multi-language support</li>
+                    </ul>
+                    <a href="ai-chatbot.html" class="btn btn-outline-primary btn-sm w-100 mt-2">
+                      <i class="fas fa-robot me-1"></i>Full AI Chat
+                    </a>
+                    <a href="https://chat.whatsapp.com/KA3aipTiHR51R5kd9lxlT6?mode=gi_t" class="btn btn-success btn-sm w-100 mt-2" target="_blank">
+                      <i class="fab fa-whatsapp me-1"></i>WhatsApp Chat
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>TAUP Medical Center</h3>
+              <p>
+                Aulie Ata 31 <br>
+                Taraz 0800, KAZAKHSTAN<br><br>
+                <strong>Phone:</strong> +7 778 107 42 72<br>
+                <strong>Email:</strong> info@taupmedical.kz<br>
+                <strong>WhatsApp:</strong> +7 777 810 74 272<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="https://chat.whatsapp.com/KA3aipTiHR51R5kd9lxlT6?mode=gi_t" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html#about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html#ai-consultant">AI Assistant</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html#doctors">Doctors</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="news.html">News</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="ai-chatbot.html">AI Health Consultation</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html#whatsapp-doctors">WhatsApp Doctor Connect</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html#departments">Specialized Departments</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html#appointment">Online Appointment</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html#contact">Emergency Services</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Health Newsletter</h4>
+            <p>Subscribe to receive health tips and updates from TAUP Medical Center</p>
+            <form action="" method="post">
+              <input type="email" name="email" placeholder="Your Email"><input type="submit" value="Subscribe">
+            </form>
+            <div class="mt-3">
+              <a href="ai-chatbot.html" class="btn btn-sm btn-outline-primary">
+                <i class="fas fa-robot me-1"></i> Try AI Assistant
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>TAUP Medical Center</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed with AI Integration for Better Healthcare
+      </div>
+    </div>
+  </footer>
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  
+  <!-- News Page JavaScript -->
+  <script>
+    // News Details Data
+    const newsData = {
+      'ai-launch': {
+        title: "TAUP Launches AI-Powered Health Assistant",
+        date: "March 15, 2024",
+        category: "Technology",
+        image: "assets/img/gallery/gallery-6.jpg",
+        content: `
+          <p>TAUP Medical Center has officially launched its revolutionary AI-powered Health Assistant, marking a significant advancement in healthcare accessibility in the Taraz region.</p>
+          
+          <h5>Key Features:</h5>
+          <ul>
+            <li><strong>24/7 Availability:</strong> The AI assistant is available round the clock to provide medical guidance</li>
+            <li><strong>Symptom Analysis:</strong> Advanced algorithms analyze symptoms and provide preliminary assessments</li>
+            <li><strong>Multi-language Support:</strong> Available in Kazakh, Russian, and English</li>
+            <li><strong>WhatsApp Integration:</strong> Direct connection to specialists via WhatsApp messaging</li>
+            <li><strong>Emergency Triage:</strong> Identifies symptoms requiring immediate medical attention</li>
+          </ul>
+          
+          <h5>How It Works:</h5>
+          <p>Patients can describe their symptoms to the AI assistant, which then analyzes the information and provides:</p>
+          <ol>
+            <li>Preliminary medical advice</li>
+            <li>Department recommendations</li>
+            <li>Emergency guidance if needed</li>
+            <li>Direct WhatsApp connection to relevant specialists</li>
+          </ol>
+          
+          <p>The AI system is trained on thousands of medical cases and continuously learns from interactions to improve its accuracy. All conversations are encrypted and comply with medical privacy regulations.</p>
+          
+          <div class="alert alert-info mt-4">
+            <i class="fas fa-info-circle me-2"></i>
+            <strong>Note:</strong> The AI assistant provides preliminary guidance only. It does not replace professional medical diagnosis. Always consult with a healthcare provider for proper medical advice.
+          </div>
+          
+          <div class="text-center mt-4">
+            <a href="ai-chatbot.html" class="btn btn-primary me-2">
+              <i class="fas fa-robot me-1"></i>Try AI Assistant Now
+            </a>
+            <a href="index.html#ai-consultant" class="btn btn-outline-primary">
+              <i class="fas fa-info-circle me-1"></i>Learn More
+            </a>
+          </div>
+        `
+      },
+      'cardiology-equipment': {
+        title: "Advanced Cardiology Equipment Installed",
+        date: "February 27, 2024",
+        category: "Equipment",
+        image: "assets/img/gallery/gallery-5.jpg",
+        content: `
+          <p>TAUP Medical Center has installed state-of-the-art cardiology equipment to enhance cardiac care services for patients in the Taraz region.</p>
+          
+          <h5>New Equipment Includes:</h5>
+          <ul>
+            <li><strong>Advanced Echocardiography Machine:</strong> Provides high-resolution heart imaging</li>
+            <li><strong>Digital ECG System:</strong> With AI-assisted arrhythmia detection</li>
+            <li><strong>Holter Monitor System:</strong> 24-hour heart rhythm monitoring</li>
+            <li><strong>Stress Test Equipment:</strong> For comprehensive cardiac assessment</li>
+          </ul>
+          
+          <h5>Benefits for Patients:</h5>
+          <ol>
+            <li>Faster and more accurate diagnosis</li>
+            <li>Early detection of heart conditions</li>
+            <li>Reduced waiting times for cardiac tests</li>
+            <li>Improved treatment planning</li>
+          </ol>
+          
+          <p>The new equipment is operated by our experienced cardiology team led by Dr. Arman Dauletiyarov, ensuring patients receive the highest standard of cardiac care.</p>
+          
+          <div class="text-center mt-4">
+            <a href="doctor1.html" class="btn btn-primary">
+              <i class="fas fa-user-md me-1"></i>Meet Our Cardiologist
+            </a>
+          </div>
+        `
+      },
+      'heart-campaign': {
+        title: "Heart Health Awareness Campaign Launched",
+        date: "February 25, 2024",
+        category: "Community",
+        image: "assets/img/gallery/gallery-1.jpg",
+        content: `
+          <p>TAUP Medical Center has launched a comprehensive heart health awareness campaign to educate the community about cardiovascular disease prevention and early detection.</p>
+          
+          <h5>Campaign Activities:</h5>
+          <ul>
+            <li><strong>Free Heart Screenings:</strong> Blood pressure, cholesterol, and glucose testing</li>
+            <li><strong>Educational Workshops:</strong> Heart-healthy lifestyle seminars</li>
+            <li><strong>Risk Assessment:</strong> Individual cardiovascular risk evaluation</li>
+            <li><strong>Exercise Demonstrations:</strong> Heart-healthy physical activities</li>
+          </ul>
+          
+          <h5>Campaign Schedule:</h5>
+          <p>The campaign will run throughout March 2024 at various locations in Taraz:</p>
+          <ul>
+            <li>Central Park: Every Saturday (10 AM - 4 PM)</li>
+            <li>City Mall: March 10-12 (12 PM - 8 PM)</li>
+            <li>TAUP Medical Center: Daily appointments available</li>
+          </ul>
+          
+          <div class="alert alert-success mt-4">
+            <i class="fas fa-heart me-2"></i>
+            <strong>Heart Health Tips:</strong> Regular exercise, balanced diet, stress management, and regular check-ups are key to maintaining a healthy heart.
+          </div>
+        `
+      },
+      'emergency-services': {
+        title: "24/7 Emergency Services Enhanced",
+        date: "February 20, 2024",
+        category: "Emergency",
+        image: "assets/img/gallery/gallery-3.jpg",
+        content: `
+          <p>TAUP Medical Center has significantly enhanced its 24/7 emergency services with new technology and improved response systems to better serve emergency cases.</p>
+          
+          <h5>Enhancements Include:</h5>
+          <ul>
+            <li><strong>AI Triage System:</strong> Advanced AI helps prioritize emergency cases</li>
+            <li><strong>WhatsApp Emergency Line:</strong> Direct emergency consultation via WhatsApp</li>
+            <li><strong>Faster Response Times:</strong> Reduced waiting times for emergency care</li>
+            <li><strong>Enhanced Monitoring:</strong> Continuous patient monitoring systems</li>
+          </ul>
+          
+          <h5>Emergency Contact Information:</h5>
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  <h6><i class="fas fa-phone text-danger me-2"></i>Emergency Numbers</h6>
+                  <ul class="mb-0">
+                    <li>Ambulance: <strong>103</strong></li>
+                    <li>TAUP Emergency: <strong>+7 778 107 42 72</strong></li>
+                    <li>WhatsApp Emergency: <strong>+7 777 810 74 272</strong></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  <h6><i class="fas fa-clock text-primary me-2"></i>Emergency Services</h6>
+                  <ul class="mb-0">
+                    <li>24/7 Availability</li>
+                    <li>Emergency Department</li>
+                    <li>Trauma Care</li>
+                    <li>Critical Care</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        `
+      },
+      'training-program': {
+        title: "Medical Staff Training Program Launched",
+        date: "February 16, 2024",
+        category: "Education",
+        image: "assets/img/gallery/gallery-4.jpg",
+        content: `
+          <p>TAUP Medical Center has launched a comprehensive continuous medical education program for its healthcare professionals to ensure they stay updated with the latest medical advancements.</p>
+          
+          <h5>Training Program Includes:</h5>
+          <ul>
+            <li><strong>AI in Healthcare:</strong> Training on using AI tools for diagnosis</li>
+            <li><strong>Advanced Medical Procedures:</strong> Latest treatment techniques</li>
+            <li><strong>Emergency Response:</strong> Enhanced emergency care training</li>
+            <li><strong>Patient Communication:</strong> Improving doctor-patient interactions</li>
+          </ul>
+          
+          <h5>Program Benefits:</h5>
+          <ol>
+            <li>Improved patient care quality</li>
+            <li>Updated medical knowledge</li>
+            <li>Enhanced diagnostic skills</li>
+            <li>Better treatment outcomes</li>
+          </ol>
+          
+          <p>The training program is conducted by medical experts and includes both theoretical and practical sessions. Regular assessments ensure continuous improvement in medical staff competency.</p>
+        `
+      },
+      'community-health': {
+        title: "Community Health Initiative in Taraz",
+        date: "February 12, 2024",
+        category: "Community",
+        image: "assets/img/d.jpg",
+        content: `
+          <p>TAUP Medical Center has launched a community health initiative to provide free medical services to underserved communities in the Taraz region.</p>
+          
+          <h5>Initiative Services:</h5>
+          <ul>
+            <li><strong>Free Health Camps:</strong> Basic health checkups and consultations</li>
+            <li><strong>Vaccination Drives:</strong> Free vaccinations for children and adults</li>
+            <li><strong>Health Education:</strong> Workshops on preventive healthcare</li>
+            <li><strong>Chronic Disease Screening:</strong> Early detection of diabetes, hypertension, etc.</li>
+          </ul>
+          
+          <h5>Schedule and Locations:</h5>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Location</th>
+                <th>Services</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>March 5-7</td>
+                <td>Taraz City Center</td>
+                <td>General checkups, vaccinations</td>
+              </tr>
+              <tr>
+                <td>March 12-14</td>
+                <td>Karabuura District</td>
+                <td>Chronic disease screening</td>
+              </tr>
+              <tr>
+                <td>March 19-21</td>
+                <td>Aksu District</td>
+                <td>Pediatric health camp</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div class="alert alert-warning mt-4">
+            <i class="fas fa-users me-2"></i>
+            <strong>Community Participation:</strong> Volunteers and medical professionals from TAUP Medical Center will be conducting these health camps. For more information, contact our community health department.
+          </div>
+        `
+      }
+    };
+
+    // Show News Detail Modal
+    function showNewsDetail(newsId) {
+      const news = newsData[newsId];
+      if (!news) return;
+      
+      const modalHTML = `
+        <div class="modal fade news-modal" id="newsDetailModal" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">${news.title}</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <div class="news-meta">
+                  <span class="news-category">${news.category}</span>
+                  <small class="text-muted">${news.date}</small>
+                </div>
+                <img src="${news.image}" class="img-fluid rounded mb-4" alt="${news.title}">
+                <div class="news-content">
+                  ${news.content}
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="shareNews('${newsId}')">
+                  <i class="fas fa-share-alt me-1"></i> Share
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+      
+      // Remove existing modal if any
+      const existingModal = document.getElementById('newsDetailModal');
+      if (existingModal) {
+        existingModal.remove();
+      }
+      
+      // Add modal to document
+      const modalContainer = document.createElement('div');
+      modalContainer.innerHTML = modalHTML;
+      document.body.appendChild(modalContainer);
+      
+      // Show modal
+      const modal = new bootstrap.Modal(document.getElementById('newsDetailModal'));
+      modal.show();
+      
+      // Remove modal after hiding
+      document.getElementById('newsDetailModal').addEventListener('hidden.bs.modal', function() {
+        modalContainer.remove();
+      });
+    }
+
+    // Share News Function
+    function shareNews(newsId) {
+      const news = newsData[newsId];
+      if (!news) return;
+      
+      const shareText = `Check out this news from TAUP Medical Center: ${news.title}`;
+      const shareUrl = window.location.href;
+      
+      if (navigator.share) {
+        navigator.share({
+          title: news.title,
+          text: shareText,
+          url: shareUrl
+        });
+      } else {
+        // Fallback for browsers that don't support Web Share API
+        const whatsappUrl = `https://chat.whatsapp.com/KA3aipTiHR51R5kd9lxlT6?mode=gi_t`;
+        window.open(whatsappUrl, '_blank');
+      }
+    }
+
+    // Newsletter Subscription
+    function subscribeNewsletter() {
+      const email = document.getElementById('newsletterEmail').value;
+      const whatsappUpdates = document.getElementById('whatsappUpdates').checked;
+      
+      if (!email || !email.includes('@')) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+      
+      // Show loading
+      const subscribeBtn = document.querySelector('.newsletter-form button');
+      const originalText = subscribeBtn.innerHTML;
+      subscribeBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-1"></i> Subscribing...';
+      subscribeBtn.disabled = true;
+      
+      // Simulate API call
+      setTimeout(() => {
+        alert('Thank you for subscribing to TAUP Medical Center updates! You will receive our latest news and health tips.');
+        document.getElementById('newsletterEmail').value = '';
+        
+        // If WhatsApp updates selected
+        if (whatsappUpdates) {
+          const whatsappUrl = `https://chat.whatsapp.com/KA3aipTiHR51R5kd9lxlT6?mode=gi_t`;
+          window.open(whatsappUrl, '_blank');
+        }
+        
+        // Reset button
+        subscribeBtn.innerHTML = originalText;
+        subscribeBtn.disabled = false;
+      }, 1500);
+    }
+
+    // News Page AI Chat
+    document.addEventListener('DOMContentLoaded', function() {
+      const chatInput = document.getElementById('newsChatInput');
+      const chatSend = document.getElementById('newsChatSend');
+      const chatResponse = document.getElementById('newsChatResponse');
+      
+      if (chatInput && chatSend && chatResponse) {
+        chatSend.addEventListener('click', function() {
+          const question = chatInput.value.trim();
+          if (!question) return;
+          
+          // Show typing indicator
+          chatResponse.style.display = 'block';
+          chatResponse.innerHTML = `
+            <div class="typing-indicator">
+              <span></span><span></span><span></span>
+              <span class="ms-2">AI is thinking...</span>
+            </div>
+          `;
+          
+          // Process after delay
+          setTimeout(() => {
+            const response = getAIResponse(question);
+            chatResponse.innerHTML = `
+              <div class="ai-response">
+                <strong><i class="fas fa-robot text-primary me-1"></i>AI Assistant:</strong>
+                <p class="mt-2 mb-3">${response.answer}</p>
+                ${response.action ? `
+                  <div class="ai-action mt-3">
+                    ${response.action}
+                  </div>
+                ` : ''}
+                <small class="text-muted d-block mt-3">
+                  <i class="fas fa-info-circle me-1"></i>
+                  This is AI-generated guidance. For medical diagnosis, please consult with a doctor.
+                </small>
+              </div>
+            `;
+          }, 2000);
+          
+          // Clear input
+          chatInput.value = '';
+        });
+        
+        // Enter key support
+        chatInput.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') {
+            chatSend.click();
+          }
+        });
+      }
+      
+      // Initialize AOS animations
+      if (typeof AOS !== 'undefined') {
+        AOS.init({
+          duration: 1000,
+          once: true
+        });
+      }
+    });
+
+    // Simple AI Response Generator for News Page
+    function getAIResponse(question) {
+      const lowerQ = question.toLowerCase();
+      let response = {
+        answer: '',
+        action: ''
+      };
+      
+      if (lowerQ.includes('symptom') || lowerQ.includes('pain') || lowerQ.includes('fever')) {
+        response.answer = 'Based on your question, I can help analyze symptoms. For accurate diagnosis, I recommend using our full AI Health Assistant or consulting with a doctor. Common symptoms should be evaluated by medical professionals.';
+        response.action = '<a href="ai-chatbot.html" class="btn btn-sm btn-primary me-2"><i class="fas fa-robot me-1"></i>Try Full AI Assistant</a><a href="https://chat.whatsapp.com/KA3aipTiHR51R5kd9lxlT6?mode=gi_t" class="btn btn-sm btn-success" target="_blank"><i class="fab fa-whatsapp me-1"></i>Chat with Doctor</a>';
+      }
+      else if (lowerQ.includes('appointment') || lowerQ.includes('book') || lowerQ.includes('schedule')) {
+        response.answer = 'You can book appointments online through our website or directly via WhatsApp. Our scheduling system shows available slots for all specialists.';
+        response.action = '<a href="index.html#appointment" class="btn btn-sm btn-primary me-2"><i class="fas fa-calendar-check me-1"></i>Book Online</a><a href="https://chat.whatsapp.com/KA3aipTiHR51R5kd9lxlT6?mode=gi_t" class="btn btn-sm btn-success" target="_blank"><i class="fab fa-whatsapp me-1"></i>Book via WhatsApp</a>';
+      }
+      else if (lowerQ.includes('emergency') || lowerQ.includes('urgent') || lowerQ.includes('immediate')) {
+        response.answer = 'For emergencies, please call 103 immediately or visit our emergency department. Our emergency team is available 24/7. You can also contact our emergency WhatsApp line for guidance.';
+        response.action = '<a href="tel:103" class="btn btn-sm btn-danger me-2"><i class="fas fa-phone me-1"></i>Call 103</a><a href="https://chat.whatsapp.com/KA3aipTiHR51R5kd9lxlT6?mode=gi_t" class="btn btn-sm btn-success" target="_blank"><i class="fab fa-whatsapp me-1"></i>Emergency WhatsApp</a>';
+      }
+      else if (lowerQ.includes('doctor') || lowerQ.includes('specialist') || lowerQ.includes('consult')) {
+        response.answer = 'We have specialists in cardiology, neurology, anesthesiology, and general medicine. You can view doctor profiles and connect directly via WhatsApp for consultation.';
+        response.action = '<a href="index.html#doctors" class="btn btn-sm btn-primary me-2"><i class="fas fa-user-md me-1"></i>View Doctors</a><a href="index.html#whatsapp-doctors" class="btn btn-sm btn-success"><i class="fab fa-whatsapp me-1"></i>Connect via WhatsApp</a>';
+      }
+      else if (lowerQ.includes('hour') || lowerQ.includes('open') || lowerQ.includes('time')) {
+        response.answer = 'TAUP Medical Center is open 24/7 for emergencies. Regular consultation hours are Monday to Friday 8:00 AM to 10:00 PM, Saturday 9:00 AM to 6:00 PM. Our AI assistant is available 24/7.';
+        response.action = '<a href="index.html#contact" class="btn btn-sm btn-primary"><i class="fas fa-clock me-1"></i>View Contact Info</a>';
+      }
+      else if (lowerQ.includes('location') || lowerQ.includes('address') || lowerQ.includes('where')) {
+        response.answer = 'We are located at Aulie Ata 31, Taraz, Kazakhstan. You can use Google Maps for directions or contact us for assistance.';
+        response.action = '<a href="https://maps.google.com/maps?q=Aulie+Ata+31,Taraz" class="btn btn-sm btn-primary" target="_blank"><i class="fas fa-map-marker-alt me-1"></i>Get Directions</a>';
+      }
+      else if (lowerQ.includes('ai') || lowerQ.includes('assistant') || lowerQ.includes('robot')) {
+        response.answer = 'Our AI Health Assistant provides 24/7 medical guidance, symptom analysis, and direct connection to doctors via WhatsApp. It\'s available in multiple languages and completely free to use.';
+        response.action = '<a href="ai-chatbot.html" class="btn btn-sm btn-primary"><i class="fas fa-robot me-1"></i>Try AI Assistant</a>';
+      }
+      else {
+        response.answer = 'Thank you for your question. I\'m here to help with medical inquiries, appointment bookings, emergency guidance, and connecting you with our specialists. How can I assist you further?';
+        response.action = '<a href="ai-chatbot.html" class="btn btn-sm btn-primary me-2"><i class="fas fa-robot me-1"></i>Full AI Chat</a><a href="index.html#contact" class="btn btn-sm btn-outline-primary"><i class="fas fa-envelope me-1"></i>Contact Us</a>';
+      }
+      
+      return response;
+    }
+  </script>
+
+</body>
+</html>

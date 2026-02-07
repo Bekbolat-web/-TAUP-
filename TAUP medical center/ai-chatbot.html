@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Health Chatbot - TAUP Medical Center</title>
+    
+    <!-- CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/doctor-ai.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .fullscreen-chat {
+            min-height: calc(100vh - 140px);
+        }
+        
+        .chatbot-header {
+            background: linear-gradient(135deg, #3fbbc0 0%, #2a8a8e 100%);
+            color: white;
+            padding: 30px 0;
+            margin-bottom: 30px;
+        }
+        
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        
+        .chat-history-panel {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            height: 100%;
+        }
+        
+        .quick-actions {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .emergency-fixed {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+      <a href="index.html" class="logo me-auto"><img src="assets/img/llogo.jpg" alt="TAUP Logo"></a>
+      
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="index.html#ai-consultant">AI Assistant</a></li>
+          <li><a class="nav-link" href="index.html#doctors">Doctors</a></li>
+          <li><a class="nav-link" href="index.html#contact">Contact</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a class="nav-link active" href="ai-chatbot.html">AI Chatbot</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      
+      <a href="index.html#appointment" class="appointment-btn">Make Appointment</a>
+    </div>
+  </header>
+
+  <!-- Chatbot Header -->
+  <section class="chatbot-header" style="margin-top: 80px;">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h1 class="display-5 fw-bold">TAUP AI Health Chatbot</h1>
+          <p class="lead mb-0">24/7 AI-powered medical assistant. Describe your symptoms and get instant guidance.</p>
+          <div class="mt-3">
+            <span class="badge bg-success me-2"><i class="fas fa-check-circle"></i> Free Service</span>
+            <span class="badge bg-info me-2"><i class="fas fa-shield-alt"></i> Privacy Protected</span>
+            <span class="badge bg-warning"><i class="fas fa-bolt"></i> Instant Response</span>
+          </div>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <div class="language-selector">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-bs-toggle="dropdown">
+                <i class="fas fa-language me-1"></i> English
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ru">Русский</a></li>
+                <li><a class="dropdown-item" href="#" data-lang="kk">Қазақша</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Chat Interface -->
+  <section class="fullscreen-chat py-5">
+    <div class="container">
+      <div class="row">
+        <!-- Chat History Panel -->
+        <div class="col-lg-4 d-none d-lg-block">
+          <div class="chat-history-panel sticky-top" style="top: 100px;">
+            <h5 class="mb-3">
+              <i class="fas fa-history me-2"></i>Recent Conversations
+            </h5>
+            <div class="chat-history-list" id="chatHistoryList">
+              <!-- Chat history will be loaded here -->
+              <div class="text-center py-4">
+                <div class="spinner-border text-primary" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="mt-2">Loading chat history...</p>
+              </div>
+            </div>
+            
+            <div class="quick-actions">
+              <h6 class="mb-3">
+                <i class="fas fa-bolt me-2"></i>Quick Actions
+              </h6>
+              <div class="d-grid gap-2">
+                <button class="btn btn-outline-primary" onclick="startNewChat()">
+                  <i class="fas fa-plus me-2"></i>New Chat
+                </button>
+                <button class="btn btn-outline-success" onclick="exportChatHistory()">
+                  <i class="fas fa-download me-2"></i>Export History
+                </button>
+                <button class="btn btn-outline-info" onclick="showAIHistory()">
+                  <i class="fas fa-chart-line me-2"></i>AI Insights
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Main Chat Area -->
+        <div class="col-lg-8">
+          <div class="ai-chat-widget h-100">
+            <div class="card shadow h-100">
+              <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">
+                  <i class="fas fa-robot me-2"></i>TAUP AI Health Assistant
+                  <small class="ms-2 opacity-75">Online</small>
+                </h5>
+                <div class="d-flex align-items-center">
+                  <div class="form-check form-switch me-3">
+                    <input class="form-check-input" type="checkbox" id="voiceInputToggle">
+                    <label class="form-check-label" for="voiceInputToggle">
+                      <i class="fas fa-microphone"></i>
+                    </label>
+                  </div>
+                  <button class="btn btn-sm btn-light" onclick="clearCurrentChat()">
+                    <i class="fas fa-redo"></i>
+                  </button>
+                </div>
+              </div>
+              
+              <div class="card-body d-flex flex-column">
+                <!-- Chat Messages -->
+                <div class="chat-messages flex-grow-1" id="mainChatMessages" style="min-height: 400px;">
+                  <!-- Welcome message -->
+                  <div class="message ai-message mb-4">
+                    <div class="d-flex">
+                      <div class="flex-shrink-0">
+                        <div class="ai-avatar-small bg-primary">
+                          <i class="fas fa-robot text-white"></i>
+                        </div>
+                      </div>
+                      <div class="flex-grow-1 ms-3">
+                        <div class="message-content p-4 rounded bg-light">
+                          <h5 class="text-primary">Welcome to TAUP AI Health Assistant! 👋</h5>
+                          <p class="mb-2">I'm your AI-powered medical assistant. I can help you with:</p>
+                          <ul class="mb-3">
+                            <li><strong>Symptom Analysis:</strong> Describe your symptoms for AI evaluation</li>
+                            <li><strong>Department Guidance:</strong> Find the right specialist for your condition</li>
+                            <li><strong>Emergency Triage:</strong> Identify symptoms needing immediate attention</li>
+                            <li><strong>Doctor Connection:</strong> Direct WhatsApp connection to specialists</li>
+                            <li><strong>Health Information:</strong> Medical guidance and education</li>
+                          </ul>
+                          <p class="mb-0"><strong>How can I help you today?</strong></p>
+                          
+                          <div class="mt-3">
+                            <small class="text-muted">
+                              <i class="fas fa-shield-alt me-1"></i>
+                              <strong>Privacy:</strong> Your conversations are confidential and secure.
+                            </small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Quick Symptom Buttons -->
+                <div class="symptom-tags mt-3">
+                  <small class="text-muted d-block mb-2">Common Symptoms:</small>
+                  <div class="d-flex flex-wrap gap-2">
+                    <button class="btn btn-sm btn-outline-primary symptom-quick-btn" data-symptom="Headache and fever">
+                      <i class="fas fa-head-side-virus me-1"></i> Headache & Fever
+                    </button>
+                    <button class="btn btn-sm btn-outline-primary symptom-quick-btn" data-symptom="Chest pain and shortness of breath">
+                      <i class="fas fa-heartbeat me-1"></i> Chest Pain
+                    </button>
+                    <button class="btn btn-sm btn-outline-primary symptom-quick-btn" data-symptom="Stomach pain and diarrhea">
+                      <i class="fas fa-stomach me-1"></i> Stomach Issues
+                    </button>
+                    <button class="btn btn-sm btn-outline-primary symptom-quick-btn" data-symptom="Back pain with leg numbness">
+                      <i class="fas fa-spine me-1"></i> Back Pain
+                    </button>
+                  </div>
+                </div>
+                
+                <!-- Chat Input -->
+                <div class="chat-input mt-3">
+                  <div class="input-group">
+                    <textarea 
+                      class="form-control ai-chat-input" 
+                      id="mainUserInput" 
+                      placeholder="Describe your symptoms in detail... (Press Shift+Enter for new line, Enter to send)"
+                      rows="3"
+                      style="resize: none;"
+                    ></textarea>
+                    <button class="btn btn-primary ai-chat-send" type="button" id="mainSendBtn">
+                      <i class="fas fa-paper-plane"></i>
+                    </button>
+                  </div>
+                  
+                  <div class="d-flex justify-content-between align-items-center mt-2">
+                    <small class="text-muted">
+                      <i class="fas fa-info-circle me-1"></i>
+                      Be as detailed as possible for better analysis
+                    </small>
+                    <div>
+                      <button class="btn btn-sm btn-outline-secondary" onclick="attachImage()">
+                        <i class="fas fa-image"></i>
+                      </button>
+                      <button class="btn btn-sm btn-outline-secondary ms-1" onclick="attachFile()">
+                        <i class="fas fa-paperclip"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Emergency Section -->
+                <div class="emergency-section mt-4" id="emergencySection" style="display: none;">
+                  <div class="alert alert-danger border-0">
+                    <div class="d-flex align-items-center">
+                      <div class="flex-shrink-0">
+                        <i class="fas fa-exclamation-triangle fa-2x me-3"></i>
+                      </div>
+                      <div class="flex-grow-1">
+                        <h6 class="alert-heading mb-2">⚠️ URGENT MEDICAL ATTENTION REQUIRED</h6>
+                        <p class="mb-2">Based on your symptoms, immediate medical evaluation is recommended.</p>
+                        <div class="d-grid gap-2 d-md-flex">
+                          <a href="tel:103" class="btn btn-danger">
+                            <i class="fas fa-phone me-2"></i> Call 103
+                          </a>
+                          <a href="https://chat.whatsapp.com/KA3aipTiHR51R5kd9lxlT6?mode=gi_t" 
+                             class="btn btn-success" target="_blank">
+                            <i class="fab fa-whatsapp me-2"></i> WhatsApp Emergency
+                          </a>
+                          <button class="btn btn-outline-danger" onclick="showNearestHospitals()">
+                            <i class="fas fa-hospital me-2"></i> Find Hospitals
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency Floating Button -->
+  <div class="emergency-fixed">
+    <button class="btn btn-danger btn-lg rounded-pill shadow-lg" onclick="showEmergencyModal()">
+      <i class="fas fa-ambulance me-2"></i> EMERGENCY
+    </button>
+  </div>
+
+  <!-- Features Section -->
+  <section class="features-section py-5 bg-light">
+    <div class="container">
+      <div class="section-title">
+        <h2>AI Chatbot Features</h2>
+        <p>Advanced AI capabilities for comprehensive healthcare assistance</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="feature-card text-center p-4 h-100">
+            <div class="feature-icon mb-3">
+              <i class="fas fa-brain fa-3x text-primary"></i>
+            </div>
+            <h5>Symptom Analysis</h5>
+            <p class="text-muted">AI-powered analysis of symptoms with department recommendations</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="feature-card text-center p-4 h-100">
+            <div class="feature-icon mb-3">
+              <i class="fab fa-whatsapp fa-3x text-success"></i>
+            </div>
+            <h5>Doctor Connection</h5>
+            <p class="text-muted">Direct WhatsApp connection to relevant specialists</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="feature-card text-center p-4 h-100">
+            <div class="feature-icon mb-3">
+              <i class="fas fa-ambulance fa-3x text-danger"></i>
+            </div>
+            <h5>Emergency Triage</h5>
+            <p class="text-muted">Instant identification of symptoms requiring emergency care</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/doctor-ai.js"></script>
+  <script src="assets/js/medical-ai.js"></script>
+  
+  <!-- AI Chatbot Script -->
+  <script>
+    // Main AI Chatbot Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const chatMessages = document.getElementById('mainChatMessages');
+      const userInput = document.getElementById('mainUserInput');
+      const sendBtn = document.getElementById('mainSendBtn');
+      const emergencySection = document.getElementById('emergencySection');
+      const symptomButtons = document.querySelectorAll('.symptom-quick-btn');
+      const voiceInputToggle = document.getElementById('voiceInputToggle');
+      const chatHistoryList = document.getElementById('chatHistoryList');
+      
+      let currentChatId = 'chat_' + Date.now();
+      let chatHistory = [];
+      let isRecording = false;
+      let recognition = null;
+      
+      // Initialize chat history
+      loadChatHistory();
+      
+      // Send message function
+      sendBtn.addEventListener('click', sendMessage);
+      userInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+          e.preventDefault();
+          sendMessage();
+        }
+      });
+      
+      // Symptom buttons
+      symptomButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const symptom = this.getAttribute('data-symptom');
+          userInput.value = symptom;
+          sendMessage();
+        });
+      });
+      
+      // Voice input toggle
+      if (voiceInputToggle) {
+        voiceInputToggle.addEventListener('change', function() {
+          if (this.checked) {
+            startVoiceRecognition();
+          } else {
+            stopVoiceRecognition();
+          }
+        });
+      }
+      
+      // Language selector
+      document.querySelectorAll('[data-lang]').forEach(item => {
+        item.addEventListener('click', function(e) {
+          e.preventDefault();
+          const lang = this.getAttribute('data-lang');
+          changeLanguage(lang);
+        });
+      });
+      
+      function sendMessage() {
+        const message = userInput.value.trim();
+        if (!message) return;
+        
+        // Add user message
+        addUserMessage(message);
+        userInput.value = '';
+        
+        // Save to history
+        saveToHistory(message, 'user');
+        
+        // AI response
+        setTimeout(() => {
+          const aiResponse = getAIResponse(message);
+          addAIMessage(aiResponse);
+          saveToHistory(aiResponse, 'ai');
+          
+          // Check for emergency
+          if (checkForEmergency(message)) {
+            emergencySection.style.display = 'block';
+            emergencySection.scrollIntoView({ behavior: 'smooth' });
+          }
+          
+          // Update chat history list
+          updateChatHistoryList();
+        }, 1000);
+      }
+      
+      function addUserMessage(text) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'message user-message mb-3';
+        messageDiv.innerHTML = `
+          <div class="d-flex">
+            <div class="flex-grow-1 me-3">
+              <div class="message-content p-3 rounded bg-primary text-white">
+                <div class="d-flex justify-content-between align-items-start mb-1">
+                  <strong>You</strong>
+                  <small class="opacity-75">${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</small>
+                </div>
+                <div class="message-text">${escapeHtml(text)}</div>
+              </div>
+            </div>
+            <div class="flex-shrink-0">
+              <div class="user-avatar-small bg-secondary">
+                <i class="fas fa-user text-white"></i>
+              </div>
+            </div>
+          </div>
+        `;
+        chatMessages.appendChild(messageDiv);
+        scrollToBottom(chatMessages);
+      }
+      
+      function addAIMessage(text) {
+        // Typing indicator
+        const typingDiv = document.createElement('div');
+        typingDiv.className = 'message ai-message mb-3';
+        typingDiv.innerHTML = `
+          <div class="d-flex">
+            <div class="flex-shrink-0">
+              <div class="ai-avatar-small bg-primary">
+                <i class="fas fa-robot text-white"></i>
+              </div>
+            </div>
+            <div class="flex-grow-1 ms-3">
+              <div class="typing-indicator p-3 rounded bg-light">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+        `;
+        chatMessages.appendChild(typingDiv);
+        scrollToBottom(chatMessages);
+        
+        // Show actual response
+        setTimeout(() => {
+          typingDiv.innerHTML = `
+            <div class="d-flex">
+              <div class="flex-shrink-0">
+                <div class="ai-avatar-small bg-primary">
+                  <i class="fas fa-robot text-white"></i>
+                </div>
+              </div>
+              <div class="flex-grow-1 ms-3">
+                <div class="message-content p-3 rounded bg-light">
+                  <div class="d-flex justify-content-between align-items-start mb-1">
+                    <strong>TAUP AI Assistant</strong>
+                    <small class="text-muted">${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</small>
+                  </div>
+                  <div class="message-text">${formatAIMessage(text)}</div>
+                  
+                  ${shouldShowWhatsAppButton(text) ? `
+                    <div class="mt-3">
+                      <a href="https://chat.whatsapp.com/KA3aipTiHR51R5kd9lxlT6?mode=gi_t" 
+                         class="btn btn-sm btn-success" target="_blank">
+                         <i class="fab fa-whatsapp me-1"></i> Connect with Doctor
+                      </a>
+                    </div>
+                  ` : ''}
+                </div>
+              </div>
+            </div>
+          `;
+          scrollToBottom(chatMessages);
+        }, 1500);
+      }
+      
+      function getAIResponse(symptoms) {
+        // Use Medical AI Engine for analysis
+        const analysis = MedicalAI.analyzeSymptoms(symptoms);
+        const confidence = MedicalAI.calculateConfidence(analysis);
+        
+        let response = '';
+        
+        if (analysis.isEmergency) {
+          response = analysis.message;
+        } else {
+          response = MedicalAI.formatResponse(analysis, true);
+        }
+        
+        // Add confidence indicator
+        response += `\n\n🤖 **AI Confidence:** ${confidence}%`;
+        
+        return response;
+      }
+      
+      function checkForEmergency(symptoms) {
+        const emergencyPatterns = [
+          /chest pain.*severe|heart attack/i,
+          /difficulty breathing|can't breathe/i,
+          /stroke|facial droop|speech difficulty/i,
+          /severe bleeding|unconscious/i,
+          /poisoning|overdose/i
+        ];
+        
+        return emergencyPatterns.some(pattern => pattern.test(symptoms));
+      }
+      
+      function formatAIMessage(text) {
+        // Format markdown-like syntax
+        return text
+          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+          .replace(/\n/g, '<br>')
+          .replace(/\*(.*?)\*/g, '<em>$1</em>')
+          .replace(/^# (.*$)/gm, '<h6>$1</h6>')
+          .replace(/^## (.*$)/gm, '<h6 class="text-primary">$1</h6>')
+          .replace(/- (.*$)/gm, '<li>$1</li>')
+          .replace(/(<li>.*<\/li>)/g, '<ul class="mb-2">$1</ul>');
+      }
+      
+      function shouldShowWhatsAppButton(text) {
+        return text.includes('consult') || 
+               text.includes('doctor') || 
+               text.includes('specialist') ||
+               text.includes('emergency');
+      }
+      
+      function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+      }
+      
+      function scrollToBottom(element) {
+        element.scrollTop = element.scrollHeight;
+      }
+      
+      // Voice Recognition
+      function startVoiceRecognition() {
+        if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+          const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+          recognition = new SpeechRecognition();
+          
+          recognition.continuous = false;
+          recognition.interimResults = false;
+          recognition.lang = 'en-US';
+          
+          recognition.onstart = function() {
+            isRecording = true;
+            showRecordingIndicator();
+          };
+          
+          recognition.onresult = function(event) {
+            const transcript = event.results[0][0].transcript;
+            userInput.value = transcript;
+            isRecording = false;
+            hideRecordingIndicator();
+          };
+          
+          recognition.onerror = function(event) {
+            console.error('Speech recognition error:', event.error);
+            isRecording = false;
+            hideRecordingIndicator();
+            voiceInputToggle.checked = false;
+          };
+          
+          recognition.onend = function() {
+            isRecording = false;
+            hideRecordingIndicator();
+            voiceInputToggle.checked = false;
+          };
+          
+          recognition.start();
+        } else {
+          alert('Speech recognition is not supported in your browser.');
+          voiceInputToggle.checked = false;
+        }
+      }
+      
+      function stopVoiceRecognition() {
+        if (recognition && isRecording) {
+          recognition.stop();
+        }
+      }
+      
+      function showRecordingIndicator() {
+        const indicator = document.createElement('div');
+        indicator.id = 'recordingIndicator';
+        indicator.className = 'alert alert-info position-fixed top-50 start-50 translate-middle';
+        indicator.style.zIndex = '9999';
+        indicator.innerHTML = `
+          <div class="text-center">
+            <i class="fas fa-microphone fa-2x me-2"></i>
+            <span class="spinner-border spinner-border-sm" role="status"></span>
+            <p class="mt-2 mb-0">Listening... Speak now</p>
+          </div>
+        `;
+        document.body.appendChild(indicator);
+      }
+      
+      function hideRecordingIndicator() {
+        const indicator = document.getElementById('recordingIndicator');
+        if (indicator) {
+          indicator.remove();
+        }
+      }
+      
+      // Language change
+      function changeLanguage(lang) {
+        MedicalAI.setLanguage(lang);
+        
+        // Update UI text based on language
+        const languageTexts = {
+          'en': {
+            placeholder: 'Describe your symptoms in detail...',
+            send: 'Send',
+            emergency: 'EMERGENCY'
+          },
+          'ru': {
+            placeholder: 'Опишите ваши симптомы подробно...',
+            send: 'Отправить',
+            emergency: 'СРОЧНО'
+          },
+          'kk': {
+            placeholder: 'Симптомдарыңызды егжей-тегжейлі сипаттаңыз...',
+            send: 'Жіберу',
+            emergency: 'ЖЕДЕЛ'
+          }
+        };
+        
+        const texts = languageTexts[lang] || languageTexts.en;
+        
+        userInput.placeholder = texts.placeholder;
+        sendBtn.innerHTML = `<i class="fas fa-paper-plane"></i> ${texts.send}`;
+        document.querySelector('.emergency-fixed button').innerHTML = 
+          `<i class="fas fa-ambulance me-2"></i> ${texts.emergency}`;
+        
+        // Update language selector button
+        const langButton = document.querySelector('.language-selector .btn');
+        const langNames = { 'en': 'English', 'ru': 'Русский', 'kk': 'Қазақша' };
+        langButton.innerHTML = `<i class="fas fa-language me-1"></i> ${langNames[lang]}`;
+      }
+      
+      // Chat history management
+      function saveToHistory(message, sender) {
+        chatHistory.push({
+          id: Date.now(),
+          sender: sender,
+          message: message,
+          timestamp: new Date().toISOString()
+        });
+        
+        // Save to localStorage
+        localStorage.setItem(currentChatId, JSON.stringify(chatHistory));
+        localStorage.setItem('lastChatId', currentChatId);
+      }
+      
+      function loadChatHistory() {
+        const savedChat = localStorage.getItem(currentChatId);
+        if (savedChat) {
+          chatHistory = JSON.parse(savedChat);
+          
+          // Display chat history
+          chatMessages.innerHTML = '';
+          chatHistory.forEach(item => {
+            if (item.sender === 'user') {
+              addUserMessage(item.message);
+            } else {
+              addAIMessage(item.message);
+            }
+          });
+        }
+        
+        updateChatHistoryList();
+      }
+      
+      function updateChatHistoryList() {
+        // Get all chat IDs from localStorage
+        const chatIds = [];
+        for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+          if (key.startsWith('chat_')) {
+            chatIds.push(key);
+          }
+        }
+        
+        // Sort by timestamp (newest first)
+        chatIds.sort((a, b) => {
+          const chatA = JSON.parse(localStorage.getItem(a));
+          const chatB = JSON.parse(localStorage.getItem(b));
+          const timeA = chatA.length > 0 ? new Date(chatA[chatA.length - 1].timestamp) : new Date(0);
+          const timeB = chatB.length > 0 ? new Date(chatB[chatB.length - 1].timestamp) : new Date(0);
+          return timeB - timeA;
+        });
+        
+        // Display in history panel
+        let historyHTML = '';
+        
+        if (chatIds.length === 0) {
+          historyHTML = '<p class="text-muted text-center">No chat history yet</p>';
+        } else {
+          chatIds.forEach(chatId => {
+            const chat = JSON.parse(localStorage.getItem(chatId));
+            if (chat.length > 0) {
+              const lastMessage = chat[chat.length - 1];
+              const time = new Date(lastMessage.timestamp).toLocaleDateString();
+              const preview = lastMessage.message.substring(0, 50) + (lastMessage.message.length > 50 ? '...' : '');
+              
+              historyHTML += `
+                <div class="history-item border rounded p-3 mb-2 ${chatId === currentChatId ? 'border-primary' : ''}" 
+                     onclick="loadChat('${chatId}')" style="cursor: pointer;">
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <small class="text-muted">${time}</small>
+                    <span class="badge bg-${chatId === currentChatId ? 'primary' : 'secondary'}">
+                      ${chat.length} messages
+                    </span>
+                  </div>
+                  <p class="mb-0 small">${escapeHtml(preview)}</p>
+                </div>
+              `;
+            }
+          });
+        }
+        
+        chatHistoryList.innerHTML = historyHTML;
+      }
+      
+      // Global functions
+      window.startNewChat = function() {
+        currentChatId = 'chat_' + Date.now();
+        chatHistory = [];
+        chatMessages.innerHTML = '';
+        
+        // Add welcome message
+        addAIMessage(`Welcome to TAUP AI Health Assistant! 👋
+
+I'm your AI-powered medical assistant. I can help you with:
+
+**Symptom Analysis:** Describe your symptoms for AI evaluation
+**Department Guidance:** Find the right specialist for your condition
+**Emergency Triage:** Identify symptoms needing immediate attention
+**Doctor Connection:** Direct WhatsApp connection to specialists
+**Health Information:** Medical guidance and education
+
+**How can I help you today?**`);
+        
+        updateChatHistoryList();
+      };
+      
+      window.clearCurrentChat = function() {
+        if (confirm('Are you sure you want to clear this chat?')) {
+          localStorage.removeItem(currentChatId);
+          startNewChat();
+        }
+      };
+      
+      window.loadChat = function(chatId) {
+        currentChatId = chatId;
+        loadChatHistory();
+      };
+      
+      window.exportChatHistory = function() {
+        if (chatHistory.length === 0) {
+          alert('No chat history to export.');
+          return;
+        }
+        
+        let exportText = `TAUP AI Health Assistant - Chat History\n`;
+        exportText += `Date: ${new Date().toLocaleString()}\n`;
+        exportText += `Chat ID: ${currentChatId}\n`;
+        exportText += '='.repeat(50) + '\n\n';
+        
+        chatHistory.forEach(item => {
+          const time = new Date(item.timestamp).toLocaleString();
+          const sender = item.sender === 'user' ? 'You' : 'AI Assistant';
+          exportText += `[${time}] ${sender}:\n${item.message}\n\n`;
+        });
+        
+        const blob = new Blob([exportText], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `TAUP-AI-Chat-${currentChatId}.txt`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      };
+      
+      window.attachImage = function() {
+        alert('Image attachment feature coming soon!');
+      };
+      
+      window.attachFile = function() {
+        alert('File attachment feature coming soon!');
+      };
+      
+      window.showEmergencyModal = function() {
+        const modalHTML = `
+          <div class="modal fade" id="emergencyModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                  <h5 class="modal-title">
+                    <i class="fas fa-ambulance me-2"></i>Emergency Assistance
+                  </h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="alert alert-danger">
+                    <h6>IF THIS IS A LIFE-THREATENING EMERGENCY:</h6>
+                    <ol class="mt-2">
+                      <li>Call <strong>103</strong> immediately for ambulance</li>
+                      <li>State your location clearly</li>
+                      <li>Describe the emergency situation</li>
+                      <li>Follow the operator's instructions</li>
+                      <li>Do not hang up until help arrives</li>
+                    </ol>
+                  </div>
+                  
+                  <h6 class="mt-4">TAUP Emergency Contacts:</h6>
+                  <div class="list-group">
+                    <a href="tel:103" class="list-group-item list-group-item-action list-group-item-danger">
+                      <i class="fas fa-ambulance me-2"></i> Ambulance: 103
+                    </a>
+                    <a href="tel:+77781074272" class="list-group-item list-group-item-action">
+                      <i class="fas fa-phone me-2"></i> TAUP Emergency: +7 778 107 42 72
+                    </a>
+                    <a href="https://chat.whatsapp.com/KA3aipTiHR51R5kd9lxlT6?mode=gi_t" 
+                       class="list-group-item list-group-item-action list-group-item-success" target="_blank">
+                      <i class="fab fa-whatsapp me-2"></i> WhatsApp Emergency
+                    </a>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <a href="tel:103" class="btn btn-danger">
+                    <i class="fas fa-phone me-2"></i> Call 103 Now
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+        
+        const modalContainer = document.createElement('div');
+        modalContainer.innerHTML = modalHTML;
+        document.body.appendChild(modalContainer);
+        
+        const modal = new bootstrap.Modal(document.getElementById('emergencyModal'));
+        modal.show();
+        
+        document.getElementById('emergencyModal').addEventListener('hidden.bs.modal', function() {
+          modalContainer.remove();
+        });
+      };
+      
+      window.showNearestHospitals = function() {
+        alert('Hospital location feature coming soon!');
+      };
+      
+      // Initialize
+      userInput.focus();
+    });
+  </script>
+</body>
+</html>
